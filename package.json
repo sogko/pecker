@@ -1,0 +1,23 @@
+{
+  "name": "pecker",
+  "version": "0.0.0",
+  "description": "pecker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sogko/pecker.git"
+  },
+  "author": {
+    "name": "Hafiz Ismail",
+    "email": "hafiz@wehavefaces.net",
+    "url": "http://wehavefaces.net"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sogko/pecker/issues"
+  },
+  "homepage": "https://github.com/sogko/pecker"
+}
