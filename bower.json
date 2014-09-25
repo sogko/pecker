@@ -1,0 +1,20 @@
+{
+  "name": "peckerBuilder",
+  "version": "0.0.0",
+  "homepage": "https://github.com/sogko/peckerBuilder",
+  "authors": [
+    "Hafiz Ismail <sgk.sprm@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "~3.2.0",
+    "angular": "~1.2.25"
+  }
+}
