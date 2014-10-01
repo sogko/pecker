@@ -1,0 +1,29 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'HelveticaNeue-Light', Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+
+.ngReactGrid {
+  font-family: 'HelveticaNeue-Light', Helvetica Neue, Helvetica, Arial, sans-serif !important;
+  font-size: 14px !important;
+
+  .ngReactGridSearch {
+    input {
+      height: 45px !important;
+    }
+  }
+}
+
+.tr {
+  transition: max-height 0.1s linear;
+}
+
+.new {
+  font-size: 12px;
+}
+
