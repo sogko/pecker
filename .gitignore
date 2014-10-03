@@ -28,3 +28,4 @@ node_modules
 .lock-wscript
 bower_components
 tests/e2e/dist
+testRunner.html
