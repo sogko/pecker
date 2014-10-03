@@ -120,14 +120,33 @@ describe('Unit: PeckerBuilder.options', function () {
         expect(peckerBuilder.options.assets.length).to.equal(1);
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'name', 'string', '_manifest.json');
       });
-      it('should rename asset with `helper.js` name to `_helper.js`', function () {
+      it('should rename asset with `pecker.js` name to `_pecker.js`', function () {
         peckerBuilder = new PeckerBuilder({
           assets: [
-            { type: 'file', name: 'helper.js' }
+            { type: 'file', name: 'pecker.js' }
           ]
         });
         expect(peckerBuilder.options.assets.length).to.equal(1);
-        expectPeckerFieldValue(peckerBuilder.options.assets[0], 'name', 'string', '_helper.js');
+        expectPeckerFieldValue(peckerBuilder.options.assets[0], 'name', 'string', '_pecker.js');
+      });
+      it('should rename asset with `pecker-loader.js` name to `_pecker-loader.js`', function () {
+        peckerBuilder = new PeckerBuilder({
+          assets: [
+            { type: 'file', name: 'pecker-loader.js' }
+          ]
+        });
+        expect(peckerBuilder.options.assets.length).to.equal(1);
+        expectPeckerFieldValue(peckerBuilder.options.assets[0], 'name', 'string', '_pecker-loader.js');
+      });
+
+      it('should rename asset with `Pecker` name to `_Pecker`', function () {
+        peckerBuilder = new PeckerBuilder({
+          assets: [
+            { type: 'file', name: 'Pecker' }
+          ]
+        });
+        expect(peckerBuilder.options.assets.length).to.equal(1);
+        expectPeckerFieldValue(peckerBuilder.options.assets[0], 'name', 'string', '_Pecker');
       });
     });
   });
@@ -206,7 +225,7 @@ describe('Unit: PeckerBuilder.options', function () {
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'entries', 'array', []);
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'require', 'array', []);
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'external', 'array', [{
-          name: 'helper',
+          name: 'Pecker',
           type: 'module'
         }]);
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'transform', 'array', []);

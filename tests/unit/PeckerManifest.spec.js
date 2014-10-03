@@ -22,8 +22,7 @@ function getDefaultContent() {
   return {
     name: null,
     baseUrl: '/static',
-    assets: {},
-    lastModifiedTimeStamp: new Date().toISOString()
+    assets: {}
   };
 }
 

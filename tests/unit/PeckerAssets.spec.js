@@ -52,8 +52,7 @@ var expectedHTMLStrings = {
   'mainPackage-link': '' +
     '<link rel="stylesheet" href="/static-assets/site.css"/>\n' +
     '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>',
-  'mainPackage-script': '<script src="/static-assets/helper.js"></script>',
-  'PeckerLoader': '<script src=\"/static-assets/helper.js\"></script>\n<script>\nvar Pecker = {\"__data\":{\"manifest\":{\"name\":\"testPecker\",\"baseUrl\":\"/static-assets\",\"assets\":{\"helper.js\":{\"type\":\"browserify\",\"url\":\"/static-assets/helper.js\",\"path\":\"/Users/hafiz/dev/pecker/tests/unit/build/helper.js\"},\"site.css\":{\"type\":\"file\",\"url\":\"/static-assets/site.css\",\"path\":\"/Users/hafiz/dev/pecker/tests/unit/build/site.css\"},\"vendor\":{\"type\":\"folder\",\"url\":\"/static-assets/vendor.7e860a84f7f30952bb8bc1b676facc42\",\"path\":\"/Users/hafiz/dev/pecker/tests/unit/build/vendor.7e860a84f7f30952bb8bc1b676facc42\"},\"bootstrap.min.css\":{\"type\":\"url\",\"url\":\"https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css\",\"path\":\"https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css\"},\"mainPackage\":{\"type\":\"package\",\"names\":[\"helper.js\",\"site.css\",\"bootstrap.min.css\",\"vendor\",\"vendor/bootstrap/fonts/glyphicons-halflings-regular.eot\"]}}}},\"Assets\":null}; \nrequire(\"Pecker.Assets\");\n</script>\n'
+  'mainPackage-script': '<script src="/static-assets/helper.js"></script>'
 };
 var peckerAssets;
 
@@ -442,14 +441,6 @@ describe('Unit: PeckerAssets', function () {
         var str = peckerAssets.constructAssetHTML('mainPackage', optionsTypeLink);
         expect(str).to.equal(expectedHTMLStrings['mainPackage-script']);
       });
-    });
-  });
-
-  describe('PeckerAssets.constructPeckerLoaderHTML()', function () {
-    it('should construct an HTML string to load Pecker scripts into the HTML page', function () {
-      var str = peckerAssets.constructPeckerLoaderHTML();
-      expect(str).to.equal(expectedHTMLStrings['PeckerLoader']);
-
     });
   });
 
