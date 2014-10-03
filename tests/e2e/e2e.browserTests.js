@@ -37,8 +37,8 @@ var expectedAssets = {
   },
   'pecker.js': {
     'type': 'browserify',
-    'url': 'dist/pecker.6d2c004001fd4763e2c7b4290a9db9dc.js',
-    'path': '/Users/hafiz/dev/pecker/tests/e2e/dist/pecker.6d2c004001fd4763e2c7b4290a9db9dc.js'
+    'url': 'dist/pecker.a1853d2626dbd0fb74c211c0acb3f477.js',
+    'path': '/Users/hafiz/dev/pecker/tests/e2e/dist/pecker.a1853d2626dbd0fb74c211c0acb3f477.js'
   },
   'bundle.js': {
     'type': 'browserify',
