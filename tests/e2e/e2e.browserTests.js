@@ -37,8 +37,8 @@ var expectedAssets = {
   },
   'pecker.js': {
     'type': 'browserify',
-    'url': 'dist/pecker.a1853d2626dbd0fb74c211c0acb3f477.js',
-    'path': '/Users/hafiz/dev/pecker/tests/e2e/dist/pecker.a1853d2626dbd0fb74c211c0acb3f477.js'
+    'url': 'dist/pecker.34441db2759b83d7a0dba5eb2cef468e.js',
+    'path': '/Users/hafiz/dev/pecker/tests/e2e/dist/pecker.34441db2759b83d7a0dba5eb2cef468e.js'
   },
   'bundle.js': {
     'type': 'browserify',
@@ -51,12 +51,15 @@ var expectedAssets = {
     'path': '/Users/hafiz/dev/pecker/tests/e2e/dist/foo.92aaa59460269603d90ba6af59740668.js'
   }
 };
+
 function expectPeckerObject(p) {
   expect(p).to.be.ok;
   expect(p.Assets).to.be.ok;
   expect(p.Manifest).to.be.ok;
+  expect(p.version).to.be.ok;
   expect(p.__data).to.be.ok;
   expect(p.__data.manifest).to.be.ok;
+  expect(p.__data.version).to.be.ok;
 }
 
 describe('Pecker', function () {
