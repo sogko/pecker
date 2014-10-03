@@ -12,7 +12,6 @@ describe('Unit: Pecker', function () {
 
   describe('Pecker', function () {
     it('should have exposed interface(s)', function () {
-      console.log(Pecker);
       expect(Pecker).to.be.ok;
       expect(Pecker.Builder).to.be.ok;
       expect(Pecker.Assets).to.be.ok;

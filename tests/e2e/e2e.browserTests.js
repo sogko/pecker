@@ -349,7 +349,6 @@ describe('Browserify', function () {
     expect(log).to.be.ok;
     expect(log).to.be.an('object');
     expect(log.log).to.be.a('function');
-    console.log(log);
     log.log('test');
   });
 });
