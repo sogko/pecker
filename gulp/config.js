@@ -4,10 +4,12 @@ module.exports = {
   jshint: {
     glob: [
       '*.js',
+      'bin/**/*.js',
       'lib/**/*.js',
       'tests/**/*.js',
       'gulp/**/*.js',
-      '!tests/unit/build/**/*'
+      '!tests/e2e/dist/**/*',
+      '!tests/support/src/**/*'
     ]
   },
   mocha: {
