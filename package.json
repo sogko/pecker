@@ -1,7 +1,7 @@
 {
   "name": "pecker",
   "version": "0.0.0",
-  "description": "pecker",
+  "description": "Pecker is a modern assets management framework for your web application development.",
   "bin": {
     "pecker": "bin/run.js"
   },
