@@ -79,7 +79,7 @@ describe('Unit: PeckerBuilder.buildFileAsset', function () {
       done();
     });
   });
-  it('should successfully build and perform built-in transforms on a simple SASS "file" asset', function (done) {
+  it('should successfully build and perform built-in transforms on an SASS "file" asset with `@import` directive', function (done) {
 
     var assetOptions = {
       type: 'file',
