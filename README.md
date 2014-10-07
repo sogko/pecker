@@ -28,7 +28,7 @@ The easiest and quickest way to start using Pecker is through the CLI by install
 ```
 npm install pecker -g 	// install globally for CLI
 cd path/to/your/project	// navigate to your project
-pecker init 				// initialize configuration file
+pecker init 			// initialize configuration file
 pecker					// run build
 ```
 
@@ -42,15 +42,15 @@ Assets include all types of content that you want to make available on your web 
 
 ## Why would I need a framework to manage assets in my web application?
 
-### Easily organize and wrangle a huge collection of a variety of assets with complex dependencies**
+### Easily organize and wrangle a huge collection of a variety of assets with complex dependencies
 
 A web project typically may start with something as simple as the following set of assets:
 One HTML file, one stylesheet (.css) file and maybe a couple of images
 
 At this stage of development, it may seems trivial managing your assets.
-But as your project gets bigger and complex, you might have to start managing a bigger number of assets.
+But as your project gets bigger and complex, you might find yourself trying to juggle a huge number of assets.
 
-Things might start to feel that its getting out of hand but with a little elbow grease, you might devise the most ingenious folder structure. But how about when those assets starts to have complex dependencies among itselves? 
+Things might start to feel that its getting out of hand but with a little elbow grease, you probably might be able to devise the most ingenious folder structure. But how about when those assets starts to have complex dependencies among itselves? 
 
 Here's a typical scenario for a medium-sized project:
 
@@ -64,7 +64,7 @@ We both know that this could easily happen to you. Because it happened to you be
 **Pecker framework helps you keep your sanity levels in check with ways to organize your assets in a logical manner.**
 
 
-### Pre- and post-processing assets
+### Ability to easily apply pre- and post-processing transformation to assets
 There's a high chance that you are already dealing with an automated build workflow for your project using Grunt, Gulp or [insert latest and kewlest build tool here]. 
 
 A typical web development scenario would involve the following:
@@ -80,13 +80,15 @@ In short, there is no shortage of use-cases for processing your assets before se
 **Pecker framework provides various mechanisms to handle pre- and post-processing for different types of assets to fit your project.**
 
 ### Overcoming hurdles with browser-caching and versioning issues
-Have you been in a similar situation where you make modifications to, for example a CSS stylesheet, for a web application you're developing, but no matter how many times you refresh the browser, the changes refuse to show up? Out of desperation, you manually clear your browser cache and re-launch it. Well, after one too many times, you can see how frustrating it is and how it hinders your productivity.
+Have you been in a similar situation where you make modifications to, for example a CSS stylesheet, for a web application you're developing, but no matter how many times you refresh the browser, the changes refuse to show up? 
 
-Browser caching are godsend for visitors using your web application (faster response time and all that), but as a developer, you'd had yourself convinced that it was forged by the Devil itself just to make your application development a living hell.
+Out of desperation, you manually clear your browser cache and re-launch it. Well, after one too many times, you can see how frustrating it is and how it hinders your productivity.
 
-Googling [cache busting](https://www.google.com.sg/#q=cache+busting), will show you a plethora of ways to deal with aggressive browser cache/
+Browser caching are godsend for visitors using your web application (faster response time and all that), but as a developer, you'd probably had yourself convinced at one point of time that it was forged by the Devil himself just to make your application development a living hell.
 
-**Pecker framework provides mechanisms for cache-busting with added advantage of versioning 
+Try googling [cache busting](https://www.google.com.sg/#q=cache+busting), and it will show you a plethora of ways to deal with aggressive browser cache.
+
+**Pecker framework has built-in mechanisms for cache-busting with added advantage of versioning 
 your assets as well**
 
 
@@ -108,7 +110,7 @@ The issue here is that depending on where you are and what you need, you might b
 <img src="http://i.imgur.com/bzeiiDD.gif"/>
 </div>
 
-In all seriously, every kind of assets are supported and can be managed using Pecker framework.
+In all seriousness, every kind of assets are supported and can be managed using Pecker framework.
 
 In Pecker, any kind of asset can fall into at least one of the following Pecker-defined **asset types**:
 
