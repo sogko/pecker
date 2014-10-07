@@ -17,8 +17,8 @@ var expectedAssets = {
   },
   'site.css': {
     'type': 'file',
-    'url': 'dist/site.aa74f0879c8ace8b4b05f1626b5930d1.css',
-    'path': '/Users/hafiz/dev/pecker/tests/e2e/dist/site.aa74f0879c8ace8b4b05f1626b5930d1.css'
+    'url': 'dist/site.738e739875b4de7b543ee43d149ec602.css',
+    'path': '/Users/hafiz/dev/pecker/tests/e2e/dist/site.738e739875b4de7b543ee43d149ec602.css'
   },
   'app.css': {
     'type': 'file',

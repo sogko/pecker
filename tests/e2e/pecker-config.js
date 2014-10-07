@@ -25,9 +25,15 @@ module.exports = {
       type: 'file',
       name: 'site.css',
       files: [
-        'src/css/site.css'
+        'src/css/sass-site.scss'
       ],
       transform: [
+        {
+          fn: 'node-sass',
+          args: {
+            includePaths: [path.join(__dirname, '../support/src/css')]
+          }
+        },
         'autoprefixer',
         'clean-css'
       ]

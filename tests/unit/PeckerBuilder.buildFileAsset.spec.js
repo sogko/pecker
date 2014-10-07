@@ -58,7 +58,28 @@ describe('Unit: PeckerBuilder.buildFileAsset', function () {
       done();
     });
   });
-  it('should successfully build and perform built-in transforms on a simple CSS "file" asset', function (done) {
+  it('should successfully build and perform built-in transforms on a simple SASS "file" asset', function (done) {
+
+    var assetOptions = {
+      type: 'file',
+      name: 'transformed-site.css',
+      files: [
+        '../support/src/css/sass-simple.scss'
+      ],
+      transform: [
+        'node-sass',
+        'concat',
+        'autoprefixer',
+        'clean-css'
+      ]
+    };
+    peckerBuilder.buildFileAsset(assetOptions, function () {
+      expectManifestContainAsset(peckerBuilder, assetOptions);
+      expectAssetExists(peckerBuilder, assetOptions);
+      done();
+    });
+  });
+  it('should successfully build and perform built-in transforms on a simple SASS "file" asset', function (done) {
 
     var assetOptions = {
       type: 'file',
@@ -67,7 +88,12 @@ describe('Unit: PeckerBuilder.buildFileAsset', function () {
         '../support/src/css/sass-site.scss'
       ],
       transform: [
-        'node-sass',
+        {
+          fn: 'node-sass',
+          args: {
+            includePaths: [ __dirname + '/../support/src/css']
+          }
+        },
         'concat',
         'autoprefixer',
         'clean-css'
