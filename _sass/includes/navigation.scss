@@ -1,0 +1,41 @@
+@import "../bootstrap/navs";
+@import "../bootstrap/list-group";
+@import "../bootstrap/forms";
+@import "../bootstrap/navbar";
+
+@mixin default-navigation () {
+  font-size: 0.9em;
+  padding-left: 0;
+  .nav-list-group {
+    @extend .list-group;
+
+    .nav-list-group-item {
+      @extend .list-group-item;
+      padding-left: 0;
+      padding-right: 0;
+      border: 0;
+
+      .nav-list-group-item-header {
+        @extend .list-group-item-heading;
+        padding-left: 15px;
+      }
+      .nav-list-group-item-links {
+        @extend .nav;
+        @extend .nav-pills;
+        @extend .nav-stacked;
+        .nav-list-group-item-link {
+          border: 0;
+
+        }
+      }
+    }
+  }
+}
+
+@mixin landing-navigation () {
+  .navigation-bar-links {
+    @extend .nav;
+    @extend .navbar-nav;
+    .navigation-bar-link {}
+  }
+}

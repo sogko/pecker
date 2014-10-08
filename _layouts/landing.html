@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include head.html %}
+</head>
+
+<body>
+<div class="layout landing-layout">
+    <div class="row">
+        <div class="header">
+            {% include header-landing.html %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="content content-{{page.url | slugify }}">
+            {{ content }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="footer">
+            {% include footer.html %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

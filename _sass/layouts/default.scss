@@ -1,0 +1,39 @@
+
+.layout.default-layout {
+  @extend .container;
+
+  .row {
+    @extend .row;
+  }
+
+  .header {
+    @extend .col-md-12;
+    @include default-header();
+  }
+
+  .navigation {
+    @extend .col-md-4;
+    @include default-navigation();
+  }
+
+  .content {
+    @extend .col-md-8;
+
+    .page-header {
+      @extend .page-header;
+    }
+  }
+
+  .content-full {
+    @extend .col-md-12;
+
+    .page-header {
+      @extend .page-header;
+    }
+  }
+
+  .footer {
+    @extend .col-md-12;
+    @include default-footer();
+  }
+}

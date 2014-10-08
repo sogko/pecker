@@ -1,20 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    {% include head.html %}
+</head>
 
-  {% include head.html %}
-
-  <body>
-
-    {% include header.html %}
-
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
+<body>
+<div class="layout default-layout">
+    <div class="row">
+        <div class="header">
+            {% include header.html %}
+        </div>
     </div>
 
-    {% include footer.html %}
+    <div class="row">
+        {% assign post_count = site.posts|size %}
+        {% assign pages_count = site.pages|size %}
+        {% if site.navigation != 0 and site.navigation == 1 or post_count + pages_count > 0 %}
+        <div class="navigation">
+            {% include navigation.html %}
+        </div>
 
-  </body>
+        <div class="content content-{{page.url | slugify }}">
+            {{ content }}
+        </div>
+        {% else %}
+        <div class="content content-full content-{{page.url | slugify }}">
+            {{ content }}
+        </div>
+        {% endif %}
+    </div>
 
+    <div class="row">
+        <div class="footer">
+            {% include footer.html %}
+        </div>
+    </div>
+</div>
+</body>
 </html>

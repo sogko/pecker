@@ -1,14 +1,88 @@
-# Site settings
-title: Pecker
-email: hafiz@wehavefaces.net
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "/pecker" # the subpath of your site, e.g. /blog/
-url: "http://wehavefaces.net" # the base hostname & protocol for your site
-twitter_username: sogko
-github_username:  sogko
+# Site title and subtitle. This is used in _includes/header.html
+title: 'Pecker'
+subtitle: 'A modern assets management framework for your web application development'
 
-# Build settings
-markdown: kramdown
+# Enable/show navigation. There are there options:
+#   0 - always hide
+#   1 - always show
+#   2 - show only if have pages/posts
+navigation: 2
+
+# URL to source code, used in _includes/footer.html
+codeurl: 'https://github.com/sogko/pecker'
+
+# Default categories (in order) to appear in the navigation
+sections: [
+    ['doc', 'Documentation'],
+    ['tut', 'Tutorial'],
+    ['ref', 'Reference'],
+    ['dev', 'Developers'],
+    ['post', 'Posts']
+]
+
+# Default categories (in order) to appear in the navigation
+collections:
+  getting_started:
+    title: 'Getting Started'
+    output: true
+    permalink: /getting-started/:path/
+  documentation:
+    title: 'Documentation'
+    output: true
+    permalink: /documentation/:path/
+  tutorial:
+    title: 'Tutorial'
+    output: true
+    permalink: /tutorial/:path/
+  reference:
+    title: 'Reference'
+    output: true
+    permalink: /reference/:path/
+  developers:
+    title: 'Developers'
+    output: true
+    permalink: /developers/:path/
+  posts:
+    title: 'Posts'
+    output: true
+    permalink: /posts/:path/
+
+# Keep as an empty string if served up at the root. If served up at a specific
+# path (e.g. on GitHub pages) leave off the trailing slash, e.g. /my-project
+baseurl: '/pecker'
+
+# Dates are not included in permalinks
+#permalink: none
+
+# Syntax highlighting
+highlighter: 'pygments'
+
+# Since these are pages, it doesn't really matter
+future: true
+
+# Exclude non-site files
+exclude: [
+  'bin',
+  'README.md',
+  'README-pecker.md',
+  'Gemfile',
+  'Gemfile.lock'
+]
+
+# Use the redcarpet Markdown renderer
+markdown: redcarpet
+redcarpet:
+    extensions: [
+        'no_intra_emphasis',
+        'fenced_code_blocks',
+        'autolink',
+        'strikethrough',
+        'superscript',
+        'with_toc_data',
+        'tables',
+        'hardwrap'
+    ]
+
+
+sass:
+    sass_dir: _sass

@@ -1,0 +1,23 @@
+
+<ul class="nav-list-group">
+    <li class="nav-list-group-item">
+        <h5 class="nav-list-group-item-header">{{ site.title }}</h5>
+        <ul class="nav-list-group-item-links">
+            <li class="{% if page.url == '/index.html' %}active{% endif %}"><a class="nav-list-group-item-link" href="{{ site.baseurl }}/">Home </a></li>
+        </ul>
+    </li>
+    {% for _collection in site.collections %}
+    {% for collection in _collection %}
+    {% if site.navigation != 0 and site.navigation == 1 or collection.docs.size > 0 %}
+    {% assign sorted_docs = collection.docs | sort: 'order' %}
+    <li class="nav-list-group-item">
+        <h5 class="nav-list-group-item-header">{{ collection.title }}</h5>
+        <ul class="nav-list-group-item-links">
+            {% for doc in sorted_docs %}<li class="{% if page.url and page.url == doc.url %}active{% endif %}"><a class="nav-list-group-item-link" href="{{ site.baseurl }}{{ doc.url }}">{{ doc.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </li>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+</ul>

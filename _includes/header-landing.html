@@ -1,0 +1,33 @@
+<nav class="navigation-bar" role="navigation">
+    <div class="navigation-bar-container">
+
+        <div class="navigation-bar-header">
+
+            <button class="navigation-bar-toggle-button collapsed" type="button" data-toggle="collapse" data-target="#pecker-navigation-bar-content-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <h4><a class="brand" href="#">{{ site.title }}</a></h4>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="navigation-bar-content collapse navbar-collapse" id="pecker-navigation-bar-content-1">
+            <ul class="navigation-bar-links">
+
+                <li>
+                    <a class="navigation-bar-link" href="{{ site.baseurl }}/">Home</a>
+                </li>
+
+                <li><a class="navigation-bar-link" href="{{ site.baseurl }}/getting-started/what-is-an-asset/">Getting Started</a></li>
+
+                <li><a class="navigation-bar-link" href="{{ site.baseurl }}/documentation/installation">Documentation</a></li>
+
+                <li><a class="navigation-bar-link" href="{{ site.codeurl }}">Source</a></li>
+
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
