@@ -120,18 +120,6 @@ In Pecker, any kind of asset can fall into at least one of the following Pecker-
 * a CommonJS module that can be browserified (i.e.  a **browserify** asset, a special asset type)
 * an ordered set of assets (i.e. an asset **package**); can also include another asset package (**nested package**)
 
-## How is Pecker different from other snazzy build tools out there?
-Well, for one thing, Pecker is **not** a build tool. We are not aiming to do what Grunt, Gulp or Broccoli head out to do. Pecker is a **framework that aims to make your assets management easier**, using multitude of tools behind the scene to achieve that.
-
-In fact, currently Pecker is using Gulp as a build tool as part of the framework. It was selected because right now, it seems to fit most of the use-cases we needed.
-
-The beauty of this is that we help to figure out the best tools and practices that you might need, free-ing you with making other choices related to other parts of your application development.
-
-We also try to ensure that Pecker would play nice with other web techologies. At the end of the day, we want to help you achieve productivity, not hinder it.
-
-*(Heck, if Broccoli turns out to be a better build tool, Pecker might be use it to some capacity.)*
-
-
 -----
 ## Installation
 You can choose to install Pecker using ```npm``` as either a global or local NodeJS module, or both!
