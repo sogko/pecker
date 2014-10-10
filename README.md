@@ -331,10 +331,3 @@ var options = module.exports = {
 * Pre-fetch assets using ```<link rel="prefetch" ... />``` supported in HTML5
 * Show an example of using Pecker.Assets and a static file server to always serve the latest version of an asset. (For eg: accessing ```/static/style.css``` will serve ```/static/style.9d29jd.css```)
 
-
-----
-
-## Changelog
-| Release |  Date | Notes |
-| :--------| :------- | :----- |
-| v0.0.0 | 6 Oct 2014 | Initial alpha release | 
