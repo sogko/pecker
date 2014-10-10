@@ -330,4 +330,3 @@ var options = module.exports = {
 	* Why would you want to inline? Reduce number of HTTP requests.
 * Pre-fetch assets using ```<link rel="prefetch" ... />``` supported in HTML5
 * Show an example of using Pecker.Assets and a static file server to always serve the latest version of an asset. (For eg: accessing ```/static/style.css``` will serve ```/static/style.9d29jd.css```)
-
