@@ -1,7 +1,7 @@
 # PECKER
 Pecker is a modern assets management framework for your web application development.
 
-**Pecker, while functionally working, is currently still under heavy development.**
+**Pecker is currently still under heavy development.**
 
 **APIs may change / break before v.1.0.0 release**
 
