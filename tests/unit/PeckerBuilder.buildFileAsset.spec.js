@@ -58,53 +58,6 @@ describe('Unit: PeckerBuilder.buildFileAsset', function () {
       done();
     });
   });
-  it('should successfully build and perform built-in transforms on a simple SASS "file" asset', function (done) {
-
-    var assetOptions = {
-      type: 'file',
-      name: 'transformed-site.css',
-      files: [
-        '../support/src/css/sass-simple.scss'
-      ],
-      transform: [
-        'node-sass',
-        'concat',
-        'autoprefixer',
-        'clean-css'
-      ]
-    };
-    peckerBuilder.buildFileAsset(assetOptions, function () {
-      expectManifestContainAsset(peckerBuilder, assetOptions);
-      expectAssetExists(peckerBuilder, assetOptions);
-      done();
-    });
-  });
-  it('should successfully build and perform built-in transforms on an SASS "file" asset with `@import` directive', function (done) {
-
-    var assetOptions = {
-      type: 'file',
-      name: 'transformed-site.css',
-      files: [
-        '../support/src/css/sass-site.scss'
-      ],
-      transform: [
-        {
-          fn: 'node-sass',
-          args: {
-            includePaths: [ __dirname + '/../support/src/css']
-          }
-        },
-        'concat',
-        'autoprefixer',
-        'clean-css'
-      ]
-    };
-    peckerBuilder.buildFileAsset(assetOptions, function () {
-      expectManifestContainAsset(peckerBuilder, assetOptions);
-      expectAssetExists(peckerBuilder, assetOptions);
-      done();
-    });
-  });
   it('should fail to build a "file" asset that does not exists', function (done) {
 
     var assetOptions = {
@@ -125,7 +78,144 @@ describe('Unit: PeckerBuilder.buildFileAsset', function () {
       done();
     });
   });
+
+  it('should successfully build but not concatenate if asset name has a file extension in skipConcat list (only one file will be referenced in manifest.json) ', function (done) {
+
+    var assetOptions = {
+      type: 'file',
+      name: 'h6k3jaH.jpg',
+      files: [
+        '../support/src/images/*.jpg'
+      ],
+      transform: [
+        {
+          fn: 'imagemin',
+          args: {
+            progressive: true
+          }
+        }
+      ]
+    };
+    peckerBuilder.buildFileAsset(assetOptions, function () {
+      expectManifestContainAsset(peckerBuilder, assetOptions);
+      expectAssetExists(peckerBuilder, assetOptions);
+      done();
+    });
+  });
+
+  describe('Built-in transforms', function () {
+
+    it('should successfully perform built-in transforms (node-sass, autoprefixer, clean-css, concat) on a simple SASS "file" asset', function (done) {
+
+      var assetOptions = {
+        type: 'file',
+        name: 'transformed-site.css',
+        files: [
+          '../support/src/css/sass-simple.scss'
+        ],
+        transform: [
+          'node-sass',
+          'concat',
+          'autoprefixer',
+          'clean-css'
+        ]
+      };
+      peckerBuilder.buildFileAsset(assetOptions, function () {
+        expectManifestContainAsset(peckerBuilder, assetOptions);
+        expectAssetExists(peckerBuilder, assetOptions);
+        done();
+      });
+    });
+    it('should successfully perform built-in transforms (node-sass, autoprefixer, clean-css, concat) on an SASS "file" asset with `@import` directive', function (done) {
+
+      var assetOptions = {
+        type: 'file',
+        name: 'transformed-site.css',
+        files: [
+          '../support/src/css/sass-site.scss'
+        ],
+        transform: [
+          {
+            fn: 'node-sass',
+            args: {
+              includePaths: [ __dirname + '/../support/src/css']
+            }
+          },
+          'concat',
+          'autoprefixer',
+          'clean-css'
+        ]
+      };
+      peckerBuilder.buildFileAsset(assetOptions, function () {
+        expectManifestContainAsset(peckerBuilder, assetOptions);
+        expectAssetExists(peckerBuilder, assetOptions);
+        done();
+      });
+    });
+    it('should successfully perform built-in transforms (uglify) on a JavaScript "file" asset', function (done) {
+
+      var assetOptions = {
+        type: 'file',
+        name: 'simple-log.min.js',
+        files: [
+          '../support/src/js/simple-log.js'
+        ],
+        transform: [
+          'uglify'
+        ]
+      };
+      peckerBuilder.buildFileAsset(assetOptions, function () {
+        expectManifestContainAsset(peckerBuilder, assetOptions);
+        expectAssetExists(peckerBuilder, assetOptions);
+        done();
+      });
+    });
+    it('should successfully perform built-in transforms (imagemin) on a JPG/JPEG "file" asset', function (done) {
+
+      var assetOptions = {
+        type: 'file',
+        name: 'h6k3jaH.jpg',
+        files: [
+          '../support/src/images/h6k3jaH.jpg'
+        ],
+        transform: [
+          'imagemin'
+        ]
+      };
+      peckerBuilder.buildFileAsset(assetOptions, function () {
+        expectManifestContainAsset(peckerBuilder, assetOptions);
+        expectAssetExists(peckerBuilder, assetOptions);
+        done();
+      });
+    });
+    it('should successfully perform built-in transforms (imagemin) on a JPG/JPEG "file" asset with options', function (done) {
+
+      var assetOptions = {
+        type: 'file',
+        name: 'h6k3jaH.jpg',
+        files: [
+          '../support/src/images/h6k3jaH.jpg'
+        ],
+        transform: [
+          {
+            fn: 'imagemin',
+            args: {
+              progressive: true
+            }
+          }
+        ]
+      };
+      peckerBuilder.buildFileAsset(assetOptions, function () {
+        expectManifestContainAsset(peckerBuilder, assetOptions);
+        expectAssetExists(peckerBuilder, assetOptions);
+        done();
+      });
+    });
+  });
+
   afterEach(function () {
     cleanBuildFiles(peckerBuilder);
   });
 });
+
+
