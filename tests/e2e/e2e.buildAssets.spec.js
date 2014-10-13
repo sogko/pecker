@@ -26,6 +26,7 @@ describe('E2E: buildAssets', function () {
 
   it('should successfully build and prepare assets for e2e test(s)', function (done) {
 
+    this.timeout(5000);
     peckerBuilder = new PeckerBuilder(options);
     peckerBuilder.buildAssets(function () {
       for (var i = 0; i < options.assets.length; i++) {
