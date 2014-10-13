@@ -320,7 +320,8 @@ var options = module.exports = {
 
 ## TODO
 * Built-in transforms
-	* image minifier
+	* ~~image minifier (using gulp-imagemin)~~
+	* sourcemaps (using gulp-sourcemaps)
 * Additional asset types
 	* images (? should we simply stick with having a generic `file` type) 
 	* textual content (?)
