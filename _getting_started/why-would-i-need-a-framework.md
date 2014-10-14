@@ -1,7 +1,7 @@
 ---
 layout: getting-started
 title: "Why would I need a framework?"
-order: 3
+order: 4
 date: 2014-10-08 23:24:43
 ---
 
@@ -9,21 +9,29 @@ date: 2014-10-08 23:24:43
 ### Wrangle a variety of assets with complex dependencies easily
 
 A web project typically may start with something as simple as the following set of assets:
-One HTML file, one stylesheet (.css) file and maybe a couple of images
+
+* One HTML file
+* One stylesheet (.css) file
+* Maybe a couple of images
 
 At this stage of development, it may seems trivial managing your assets.
 But as your project gets bigger and complex, you might find yourself trying to juggle a huge number of assets.
 
-Things might start to feel that its getting out of hand but with a little elbow grease, you probably might be able to devise the most ingenious folder structure. But how about when those assets starts to have complex dependencies among itselves? 
+Things might start to feel that its getting out of hand but with a little elbow grease, you probably might be able to devise the most ingenious folder structure.
+
+But how about when those assets start to have complex dependencies among itselves? 
 
 Here's a typical scenario for a medium-sized project:
 
-Your client-side JavaScript application file requires a **custom vendor** code, that depends on multiple **Bower**-managed component, along with several **external scripts** hosted on different **CDN networks**. Let's not get started on **stylesheets and images** that needed to be included.
-Oh, have we mentioned that the **dependency order** mattered too. Also, let's not forget about having to need to refer to the URL path to your **HTML templates**  within your application on the client-side.
+
+> Your client-side JavaScript application file requires a **custom vendor** code, that depends on multiple **Bower**-managed component, along with several **external scripts** hosted on different **CDN networks**. Let's not get started on **stylesheets and images** that needed to be included.
+> Oh, have we mentioned that the **dependency order** mattered too. Also, let's not forget about having to need to refer to the URL path to your **HTML templates**  within your application on the client-side.
 
 Phew.
 
-We both know that this could easily happen to you. Because it happened to you before.
+We both know that this could easily happen to 
+
+you. Because it happened to you before.
 
 **Pecker framework helps you keep your sanity levels in check with ways to organize your assets in a logical manner.**
 
@@ -32,6 +40,7 @@ We both know that this could easily happen to you. Because it happened to you be
 There's a high chance that you are already dealing with an automated build workflow for your project using Grunt, Gulp or [insert latest and kewlest build tool here]. 
 
 A typical web development scenario would involve the following:
+
 * Pre-process dynamic stylesheet files (LessCSS, SASS etc) into CSS stylesheets files.
 * Auto-prefix vendor-specific prefixes to CSS rules.
 * Optimize your CSS stylesheet for improved performance through minification.
@@ -53,7 +62,7 @@ Browser caching are godsend for visitors using your web application (faster resp
 Try googling [cache busting](https://www.google.com.sg/#q=cache+busting), and it will show you a plethora of ways to deal with aggressive browser cache.
 
 **Pecker framework has built-in mechanisms for cache-busting with added advantage of versioning 
-your assets as well**
+your assets as well.**
 
 
 ### Bridging a gap between server and client-side code, making assets available on both ends

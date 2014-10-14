@@ -1,4 +1,4 @@
-
+@import "bootstrap/bootstrap";
 @import "variables";
 @import "mixins";
 @import "type";
@@ -23,7 +23,7 @@ pre, code {
   border: none;
   border-radius: 0;
   background-color: #f9f9f9;
-  font-size: 0.15em;
+  font-size: 0.95em;
 }
 
 pre {

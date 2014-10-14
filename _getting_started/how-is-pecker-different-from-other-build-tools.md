@@ -1,7 +1,7 @@
 ---
 layout: getting-started
 title: "How is Pecker different from other build tools?"
-order: 2
+order: 3
 date: 2014-10-08 23:24:43
 ---
 Well, for one thing, Pecker is **not** a build tool.
@@ -16,4 +16,4 @@ The beauty of this is that we help to figure out the best tools and practices th
 
 We also try to ensure that Pecker would play nice with other web techologies. At the end of the day, we want to help you achieve productivity, not hinder it.
 
-*(Heck, if Broccoli turns out to be a better build tool, Pecker might be use it to some capacity.)*
+*(Heck, if Broccoli turns out to be a better build tool, Pecker might use it to some capacity.)*
