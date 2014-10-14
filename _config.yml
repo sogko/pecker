@@ -1,6 +1,7 @@
 # Site title and subtitle. This is used in _includes/header.html
 title: 'Pecker'
 subtitle: 'A modern assets management framework for your web application development'
+titlelead: 'Pecker is a modern assets management framework for your web application development'
 
 # Enable/show navigation. There are there options:
 #   0 - always hide
@@ -26,6 +27,10 @@ collections:
     title: 'Getting Started'
     output: true
     permalink: /getting-started/:path/
+  usages:
+    title: 'Usages'
+    output: true
+    permalink: /usages/:path/
   documentation:
     title: 'Documentation'
     output: true

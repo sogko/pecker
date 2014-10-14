@@ -1,0 +1,168 @@
+/**
+ * Header 9 stylesheet  
+ * */
+ @import url(http://fonts.googleapis.com/css?family=Patrick+Hand+SC);
+ .header-9 {
+    z-index: 100;
+    padding-top:0;
+    padding-bottom:0;
+    width: 100%;
+    .navbar {
+        position: absolute;
+        z-index: 2;
+        top: 60px;
+        .font(13px);
+        font-family: @font-family-demo;
+        .opacity(0);
+        &.navbar-fixed-top {
+            position:fixed;
+            margin-top: 20px;
+        }
+        .loaded & {
+            .opacity(100);
+        }
+        .brand {
+            padding: 0 !important;
+            font-weight: normal;
+            .a-color(white, #506e8c);
+            img:first-child {
+                float: left;
+                margin: -10px 15px 0 0;
+            }
+        }
+        .nav {
+            @media (min-width: 992px) {
+                position: absolute;
+                width: 100%;
+                height: 0;
+                right: 15px;
+                overflow: visible;
+                text-align: right;
+                > li {
+                    float: none;
+                    display: inline-block;
+                    margin-left: 10%;
+                    margin-top: 12px;
+                }
+            }
+            @media (min-width: 1200px) {
+                > li {
+                    margin-left: 12%;
+                }
+            }
+            > li {
+                > a {
+                    padding: 0;
+                    .font(13px);
+                    .a-color(white, #506e8c);
+                    font-weight:500;
+                    letter-spacing:1.6px;
+                    font-family:@font-family-demo;
+                }
+                &.active > a {
+                    .a-color(#506e8c);
+                }
+            }
+        }
+        .navbar-toggle {
+            margin-top: 8px;
+        }
+        .navbar-header {
+            position: relative;
+            z-index: 2;
+        }
+    }
+    > .container {
+        position: relative;
+    }
+}
+.header-9-sub {
+    position: relative;
+    width: 100%;
+    z-index: 50;
+    padding-top: 300px;
+    padding-bottom: 60px;
+    > .container {
+        position: relative;
+        z-index: 51;
+    }
+    color: white;
+    text-align: center;
+    .hero-unit.bordered {
+        display: inline-block;
+        .border-radius(0);
+        .box-sizing(border-box);
+        border: 8px solid white;
+        padding: 26px 25px;
+        margin-bottom: 40px;
+        background: transparent none;
+        p {
+            .font(46px, white);
+            @media (max-width: 768px) {
+                .font(36px, white);
+            }
+            font-family: @font-family-demo;
+            font-weight: 800;
+            .line-height(46px);
+            letter-spacing: 0;
+        }
+    }
+    .wide-text.text-warning {
+        .font(13px, white);
+        font-family: @font-family-demo;
+        font-weight: 500;
+        letter-spacing: 1.6px;
+        text-transform: uppercase;
+    }
+    .hero-unit {
+        .opacity(0);
+        .loaded & {
+            .transition(~'1.2s opacity');
+            .opacity(100);
+        }
+    }
+    @media (max-width: 480px) {
+        padding-top: 150px;
+        padding-bottom: 60px;
+        background-attachment: scroll;
+        background-position: 50% 50%!important;
+    }
+    .nav-steps {
+        margin-top: 200px;
+        .font(13px);
+        font-family: @font-family-demo;
+        font-weight:500;
+        .line-height(25px);
+        > * {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        a {
+            .a-color(white, white);
+            .opacity(20);
+            &:hover, &:focus {
+                .opacity(50);
+            }
+            &.active {
+                .opacity(100);
+            }
+        }
+        .steps-selectors {
+            margin: 0 40px;
+            .font(22px);
+            font-family:'Courier New', monospace;
+            letter-spacing: -7px;
+        }
+        .opacity(0);
+        .loaded & {
+            .transition(~'1.2s 1.2s opacity');
+            .opacity(100);
+        }
+        @media (max-width: 480px) {
+            margin-top: 82px;
+            .steps-selectors {
+                margin: 0 10px;
+            }
+        }
+    }
+}

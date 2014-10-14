@@ -1,8 +1,6 @@
 ---
 layout: landing
 title: "A modern assets management framework for your web application development"
-title1: "A modern assets management framework for your web application development"
-title12: "A modern assets management framework for your web application development"
 
 ---
 

@@ -1,0 +1,158 @@
+.header-21-sub {
+    padding-bottom: 50px;
+}
+.header-21-sub h3 {
+    font-size: 70px;
+    /*font-weight: bold;*/
+    /*font-weight: 800;*/
+
+}
+.footer-4 .brand-text {
+    font-size: 20px;
+    font-weight: normal;
+    font-weight: 500;
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    color: #ffffff;
+}
+.header-21 .navbar {
+    margin-top: 30px;
+}
+
+/**
+ * Header 21 Brand Colours
+ * */
+.header-21-sub .lead {
+    color: #2c3e50;
+}
+.header-21 .navbar .btn {
+    border: 2px solid #2c3e50;
+    color: #2c3e50;
+}
+.header-21 .navbar .btn:hover,
+.header-21 .navbar .btn:focus {
+    background: #2c3e50;
+    color: white;
+}
+.header-21 .navbar .brand {
+    font-weight: normal;
+    color: #2c3e50;
+    font-weight: 800;
+}
+.header-21 .navbar .nav > li a {
+    text-transform: uppercase;
+}
+.header-21 .navbar .nav > li > a:hover,
+.header-21 .navbar .nav > li > a:focus,
+.header-21 .navbar .nav > li > a.active {
+    color: #2c3e50;
+}
+.header-21 .navbar .nav > li.active > a {
+    color: #2c3e50;
+}
+.header-21 .navbar .nav > li.active > a:hover,
+.header-21 .navbar .nav > li.active > a:focus,
+.header-21 .navbar .nav > li.active > a.active {
+    color: #2c3e50;
+}
+.header-21 .navbar .navbar-toggle {
+    background-image: url("../assets/icons/menu-icon-header-8.png");
+    margin-top: 22px;
+}
+
+ /**
+ * Header 21 Middle buttons
+ * */
+.header-21-sub .container {
+    text-align: center;
+}
+.header-21-sub .btns {
+
+    display: inline-block;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (max-width: 680px) {
+    .header-21-sub .btns {
+        margin-top: 48px;
+        display: block;
+    }
+}
+.header-21-sub .btns .btn {
+    min-width: 160px;
+    float: left;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 15px 25px;
+}
+@media (max-width: 680px) {
+    .header-21-sub .btns .btn {
+        float: none;
+        display: block;
+        margin-top: 10px;
+    }
+    .header-21-sub .btns .btn:first-child {
+        margin-top: 0;
+    }
+}
+.header-21-sub .btns .btn + .btn {
+    margin-left: 20px;
+}
+@media (max-width: 680px) {
+    .header-21-sub .btns .btn + .btn {
+        margin-left: 0;
+    }
+}
+.header-21-sub .btn.btn-inverse {
+    background-color: #3c556e;
+}
+.header-21-sub .btn.btn-inverse:hover,
+.header-21-sub .btn.btn-inverse:focus {
+    background-color: #63778b;
+}
+.header-21-sub .btn.btn-inverse:active,
+.header-21-sub .btn.btn-inverse.active {
+    background-color: #33485e;
+}
+.header-21-sub .btn.btn-danger {
+    background-color: #c0392b;
+}
+.header-21-sub .btn.btn-danger:hover,
+.header-21-sub .btn.btn-danger:focus {
+    background-color: #cd6155;
+}
+.header-21-sub .btn.btn-danger:active,
+.header-21-sub .btn.btn-danger.active {
+    background-color: #a33025;
+}
+
+.content-36 {
+    background: #ffffff;
+    text-align: center;
+    color: #95a5a6;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+.content-36 h2 {
+    color: #2c3e50;
+    font-size: 46px;
+    line-height: 55px;
+    margin: 0 0 60px;
+    letter-spacing: -1px;
+    font-weight: normal;
+    font-weight: 300;
+}
+.content-36 .btn-success {
+    background: #27ae60;
+    font-size: 22px;
+    font-weight: 500;
+    padding: 15px 46px;
+    margin: 0 0 55px;
+}
+.content-36 p {
+    margin: 0 auto 55px;
+    width: 48%;
+    font-size: 20px;
+    line-height: 31px;
+    font-weight: 500;
+}

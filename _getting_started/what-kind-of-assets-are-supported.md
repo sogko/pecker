@@ -1,7 +1,7 @@
 ---
 layout: getting-started
 title: "What kind of assets are supported?"
-order: 2
+order: 3
 date: 2014-10-08 23:24:43
 ---
 

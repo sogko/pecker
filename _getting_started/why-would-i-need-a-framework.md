@@ -1,12 +1,12 @@
 ---
 layout: getting-started
 title: "Why would I need a framework?"
-order: 4
+order: 5
 date: 2014-10-08 23:24:43
 ---
 
 
-### Wrangle a variety of assets with complex dependencies easily
+#### Wrangle a variety of assets with complex dependencies easily
 
 A web project typically may start with something as simple as the following set of assets:
 
@@ -29,14 +29,17 @@ Here's a typical scenario for a medium-sized project:
 
 Phew.
 
-We both know that this could easily happen to 
+We both know that this could easily happen to you.
 
-you. Because it happened to you before.
+Because it happened before.
 
 **Pecker framework helps you keep your sanity levels in check with ways to organize your assets in a logical manner.**
 
 
-### Pre- and post-processing transformation to assets
+---
+
+
+#### Pre- and post-processing transformation to assets
 There's a high chance that you are already dealing with an automated build workflow for your project using Grunt, Gulp or [insert latest and kewlest build tool here]. 
 
 A typical web development scenario would involve the following:
@@ -52,7 +55,11 @@ In short, there is no shortage of use-cases for processing your assets before se
 
 **Pecker framework provides various mechanisms to handle pre- and post-processing for different types of assets to fit your project.**
 
-### Overcoming hurdles with browser-caching and versioning issues
+
+---
+
+
+#### Overcoming hurdles with browser-caching and versioning issues
 Have you been in a similar situation where you make modifications to, for example a CSS stylesheet, for a web application you're developing, but no matter how many times you refresh the browser, the changes refuse to show up? 
 
 Out of desperation, you manually clear your browser cache and re-launch it. Well, after one too many times, you can see how frustrating it is and how it hinders your productivity.
@@ -65,7 +72,11 @@ Try googling [cache busting](https://www.google.com.sg/#q=cache+busting), and it
 your assets as well.**
 
 
-### Bridging a gap between server and client-side code, making assets available on both ends
+
+---
+
+
+#### Bridging a gap between server and client-side code, making assets available on both ends
 A simple scenario for this would be HTML templates for your web application. Sometimes you find yourself needing to refer to a template file on both the front-end and the back-end code. Well, what's the problem?
 
 The issue here is that depending on where you are and what you need, you might be looking for either 

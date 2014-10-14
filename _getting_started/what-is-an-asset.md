@@ -1,7 +1,7 @@
 ---
 layout: getting-started
 title: "What is an asset?"
-order: 1
+order: 2
 date: 2014-10-08 23:24:43
 ---
 
