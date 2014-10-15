@@ -319,13 +319,35 @@ var options = module.exports = {
 
 
 ## TODO
+* Pecker config
+    * would it be useful to have a `description` field for each asset?
+    * `skipHash`
+* Pecker CLI
+    * default to `help`
+    * Add new actions
+        * `clean`
+        * `prune`
+        * `add`
+        * `remove`
 * Built-in transforms
 	* ~~image minifier (using gulp-imagemin)~~
 	* sourcemaps (using gulp-sourcemaps)
+	* LESS-CSS
+	* pass in peckerOptions and assetOptions
+	* automatically resolve path-related arguments for built-in transforms
 * Additional asset types
 	* images (? should we simply stick with having a generic `file` type) 
 	* textual content (?)
 	* internationalization / localization (?)
+	* a `bower` type?
+	    * its an extension to `folder` type
+	    * only copy files defined in `bower.json -> asset -> main`
+	    * `main` can be overidden
+	* does it make sense to extend this to `npm`?
+	    * if you want to include npm module, can use browserify.
+	    * and usually npm modules that can work in browser, would have a bower registry entry anyway
+	* how about `component`?
+	* support `duo` (similar fashion to `browserify`)
 * In-line assets
 	* Create an inline content for existing asset.
 	* For eg: inlined images, inlined scripts, inlined stylesheets
