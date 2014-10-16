@@ -29,3 +29,4 @@ node_modules
 bower_components
 tests/e2e/dist
 testRunner.html
+tests/unit/build

@@ -1,0 +1,5 @@
+.git*
+tests/
+gulp/
+gulpfile.js
+.DS_Store
