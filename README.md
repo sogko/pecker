@@ -336,7 +336,7 @@ You can do `pecker prune` to clear out duplicate and old physical assets.
 ## TODO
 * Pecker config
     * would it be useful to have a `description` field for each asset?
-    * `skipHash`
+    * ~~`skipHash`~~
 * Pecker CLI
     * ~~default to `help`~~
     * Add new actions
