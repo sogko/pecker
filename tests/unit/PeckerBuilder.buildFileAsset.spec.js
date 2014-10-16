@@ -103,6 +103,23 @@ describe('Unit: PeckerBuilder.buildFileAsset', function () {
     });
   });
 
+  it('should successfully build a simple CSS "file" asset without hash if skipHash = true', function (done) {
+    var assetOptions = {
+      type: 'file',
+      name: 'site.css',
+      files: [
+        '../support/src/css/site.css'
+      ],
+      skipHash: true
+    };
+    peckerBuilder.buildFileAsset(assetOptions, function () {
+      expectManifestContainAsset(peckerBuilder, assetOptions);
+      expectAssetExists(peckerBuilder, assetOptions);
+      done();
+    });
+  });
+
+
   describe('Built-in transforms', function () {
 
     it('should successfully perform built-in transforms (sass, autoprefixer, clean-css, concat) on a simple SASS "file" asset', function (done) {

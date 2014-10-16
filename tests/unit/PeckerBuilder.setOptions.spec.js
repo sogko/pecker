@@ -47,7 +47,8 @@ describe('Unit: PeckerBuilder.setOptions', function () {
         name: 'test.js',
         files: [],
         transform: [],
-        watch: []
+        watch: [],
+        skipHash: false
       }
     ]);
   });

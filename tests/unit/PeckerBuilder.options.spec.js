@@ -60,7 +60,8 @@ describe('Unit: PeckerBuilder.options', function () {
           name: 'test.js',
           files: [],
           transform: [],
-          watch: []
+          watch: [],
+          skipHash: false
         }
       ]);
 
@@ -174,6 +175,7 @@ describe('Unit: PeckerBuilder.options', function () {
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'files', 'array', []);
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'transform', 'array', []);
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'watch', 'array', []);
+        expectPeckerFieldValue(peckerBuilder.options.assets[0], 'skipHash', 'boolean', false);
       });
     });
 
@@ -200,6 +202,7 @@ describe('Unit: PeckerBuilder.options', function () {
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'watch', 'array', []);
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'include', 'array', ['*.*']);
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'exclude', 'array', []);
+        expectPeckerFieldValue(peckerBuilder.options.assets[0], 'skipHash', 'boolean', false);
       });
     });
 

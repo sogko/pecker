@@ -72,19 +72,34 @@ function expectManifestContainAsset(peckerObj, assetOptions) {
   expect(manifestObj.assets[assetOptions.name], 'expected asset to have a type').to.contain.keys('type');
   expect(manifestObj.assets[assetOptions.name].type, 'expected asset type to be').to.equal(assetOptions.type);
 
+  function stripTrailingSlash(str) {
+    if (str.substr(-1) === '/') {
+      return str.substr(0, str.length - 1);
+    }
+    return str;
+  }
+  function validateUrl(url) {
+    if (assetOptions.skipHash === true) {
+      return (path.basename(url) === assetOptions.name && stripTrailingSlash(path.dirname(url)) === stripTrailingSlash(peckerObj.options.baseUrl));
+    } else {
+      return (path.basename(url) !== assetOptions.name && stripTrailingSlash(path.dirname(url)) === stripTrailingSlash(peckerObj.options.baseUrl));
+    }
+  }
+  function validatePath(p) {
+    if (assetOptions.skipHash === true) {
+      return (path.basename(p) === assetOptions.name);
+    } else {
+      return (path.basename(p) !== assetOptions.name);
+    }
+  }
   switch (assetOptions.type) {
     case 'file':
     case 'folder':
     case 'browserify':
       expect(manifestObj.assets[assetOptions.name]).to.contain.keys('url');
-      expect(manifestObj.assets[assetOptions.name].url).to.satisfy(function (url) {
-        if (path.basename(url) === assetOptions.name) {
-          return (url === path.join(peckerObj.options.baseUrl, assetOptions.name));
-        } else {
-          // TODO: hashed
-          return true;
-        }
-      }, ' contains the expected url');
+      expect(manifestObj.assets[assetOptions.name].url).to.satisfy(validateUrl, ' contains the expected url, skipHash: ' + (assetOptions.skipHash === true));
+      expect(manifestObj.assets[assetOptions.name].path).to.satisfy(validatePath, ' contains the expected path, skipHash: ' + (assetOptions.skipHash === true));
+
       break;
     case 'url':
       expect(manifestObj.assets[assetOptions.name]).to.contain.keys('url');
