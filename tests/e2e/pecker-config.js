@@ -29,9 +29,9 @@ module.exports = {
       ],
       transform: [
         {
-          fn: 'node-sass',
+          fn: 'sass',
           args: {
-            includePaths: [path.join(__dirname, '../support/src/css')]
+            includePaths: ['../support/src/css']
           }
         },
         'autoprefixer',

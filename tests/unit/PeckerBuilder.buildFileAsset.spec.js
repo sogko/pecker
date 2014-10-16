@@ -67,7 +67,7 @@ describe('Unit: PeckerBuilder.buildFileAsset', function () {
         '../support/src/css/file-does-not-exists.css'
       ],
       transform: [
-        'node-sass',
+        'sass',
         'concat',
         'autoprefixer',
         'clean-css'
@@ -105,7 +105,7 @@ describe('Unit: PeckerBuilder.buildFileAsset', function () {
 
   describe('Built-in transforms', function () {
 
-    it('should successfully perform built-in transforms (node-sass, autoprefixer, clean-css, concat) on a simple SASS "file" asset', function (done) {
+    it('should successfully perform built-in transforms (sass, autoprefixer, clean-css, concat) on a simple SASS "file" asset', function (done) {
 
       var assetOptions = {
         type: 'file',
@@ -114,7 +114,7 @@ describe('Unit: PeckerBuilder.buildFileAsset', function () {
           '../support/src/css/sass-simple.scss'
         ],
         transform: [
-          'node-sass',
+          'sass',
           'concat',
           'autoprefixer',
           'clean-css'
@@ -126,7 +126,7 @@ describe('Unit: PeckerBuilder.buildFileAsset', function () {
         done();
       });
     });
-    it('should successfully perform built-in transforms (node-sass, autoprefixer, clean-css, concat) on an SASS "file" asset with `@import` directive', function (done) {
+    it('should successfully perform built-in transforms (sass, autoprefixer, clean-css, concat) on an SASS "file" asset with `@import` directive', function (done) {
 
       var assetOptions = {
         type: 'file',
@@ -136,7 +136,7 @@ describe('Unit: PeckerBuilder.buildFileAsset', function () {
         ],
         transform: [
           {
-            fn: 'node-sass',
+            fn: 'sass',
             args: {
               includePaths: [ __dirname + '/../support/src/css']
             }
@@ -144,6 +144,32 @@ describe('Unit: PeckerBuilder.buildFileAsset', function () {
           'concat',
           'autoprefixer',
           'clean-css'
+        ]
+      };
+      peckerBuilder.buildFileAsset(assetOptions, function () {
+        expectManifestContainAsset(peckerBuilder, assetOptions);
+        expectAssetExists(peckerBuilder, assetOptions);
+        done();
+      });
+    });
+    it('should successfully perform built-in transforms (sass) on an SASS "file" asset with `@import` directive in a different directory', function (done) {
+
+      var assetOptions = {
+        type: 'file',
+        name: 'transformed-site.css',
+        files: [
+          '../support/src/css/import-flat-ui.scss'
+        ],
+        transform: [
+          {
+            fn: 'sass',
+            args: {
+              includePaths: [
+                './../support/src/flat-ui-sass/stylesheets/',
+                './../support/src/bourbon/'
+              ]
+            }
+          }
         ]
       };
       peckerBuilder.buildFileAsset(assetOptions, function () {
