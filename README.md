@@ -338,19 +338,19 @@ You can do `pecker prune` to clear out duplicate and old physical assets.
     * would it be useful to have a `description` field for each asset?
     * `skipHash`
 * Pecker CLI
-    * default to `help`
+    * ~~default to `help`~~
     * Add new actions
         * `clean`
         * `prune`
-        * `add`
+        * ~~`add`~~
         * `remove`
-    * `destDir` is relative to `baseDir`
+    * ~~`destDir` is relative to `baseDir`~~
 * Built-in transforms
 	* ~~image minifier (using gulp-imagemin)~~
 	* sourcemaps (using gulp-sourcemaps)
-	* LESS-CSS
-	* pass in peckerOptions and assetOptions
-	* automatically resolve path-related arguments for built-in transforms
+	* ~~LESS-CSS~~
+	* ~~pass in peckerOptions and assetOptions to built-in transform~~
+	* ~~automatically resolve path-related arguments for built-in transforms~~
 * Additional asset types
 	* images (? should we simply stick with having a generic `file` type) 
 	* textual content (?)
