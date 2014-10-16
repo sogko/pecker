@@ -290,7 +290,7 @@ We welcome contributions of any kind to the project =) (Just be kind)
 ## Known Issues
 ### `node-sass` transform fails if file contains `@import` directives
 Since the transform works on buffered content of files, ```node-sass``` needs to know of the path(s) of the imported files.
-Solution: simply specify the ``importPaths``` option to ```node-sass```.
+Solution: simply specify the ``includePaths``` option to ```node-sass```.
 
 Example:
 
@@ -302,18 +302,33 @@ var options = module.exports = {
     {
       type: 'file',
       name: 'style.css',
-      files: [ 'src/css/style.css' ],
+      files: [ './src/css/style.css' ],
       transform: [
         {
           fn: 'node-sass',
           args: {
-            includePaths: ['/path/to/src/css/']            
+            includePaths: [
+            '/absolute/path/to/src/css/',
+            './relative/path/to/baseDir/'
+            ]            
           }
         }
       ]
     },
 }
 ```
+
+### `folder` asset sometimes generate a new hash even though no files has been changed in the folder
+The content hash for a `folder` asset is calculated by hashing the content of all of the folder and its sub-folders files.
+The order of the files being hashed matters. For example, hash for files (A, B, C) is different for files (B, A, C), even though the content may be the same.
+
+The current mechanism behind traversing the folder and retrieving its files unfortunately can't guarantee the order of the files 100% of the time.
+
+This issue causes Pecker to re-create a duplicate physical asset.
+
+Nonetheless, not to worry since Pecker knows which latest `folder` asset to reference.
+
+You can do `pecker prune` to clear out duplicate and old physical assets.
 
 ----
 
@@ -329,6 +344,7 @@ var options = module.exports = {
         * `prune`
         * `add`
         * `remove`
+    * `destDir` is relative to `baseDir`
 * Built-in transforms
 	* ~~image minifier (using gulp-imagemin)~~
 	* sourcemaps (using gulp-sourcemaps)
@@ -340,9 +356,10 @@ var options = module.exports = {
 	* textual content (?)
 	* internationalization / localization (?)
 	* a `bower` type?
-	    * its an extension to `folder` type
+	    * its an extension to `folder` and `package` type
 	    * only copy files defined in `bower.json -> asset -> main`
 	    * `main` can be overidden
+	    * when asset name is referenced in a package, expand to its main
 	* does it make sense to extend this to `npm`?
 	    * if you want to include npm module, can use browserify.
 	    * and usually npm modules that can work in browser, would have a bower registry entry anyway
@@ -353,4 +370,6 @@ var options = module.exports = {
 	* For eg: inlined images, inlined scripts, inlined stylesheets
 	* Why would you want to inline? Reduce number of HTTP requests.
 * Pre-fetch assets using ```<link rel="prefetch" ... />``` supported in HTML5
-* Show an example of using Pecker.Assets and a static file server to always serve the latest version of an asset. (For eg: accessing ```/static/style.css``` will serve ```/static/style.9d29jd.css```)
+* Tutorials
+    * Show an example of using Pecker.Assets and a static file server to always serve the latest version of an asset. (For eg: accessing ```/static/style.css``` will serve ```/static/style.9d29jd.css```)
+    * Use Pecker.Assets in Jekyll
