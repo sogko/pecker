@@ -227,10 +227,12 @@ describe('Unit: PeckerBuilder.options', function () {
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'name', 'string', 'app.min.js');
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'entries', 'array', []);
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'require', 'array', []);
-        expectPeckerFieldValue(peckerBuilder.options.assets[0], 'external', 'array', [{
-          name: 'Pecker',
-          type: 'module'
-        }]);
+        expectPeckerFieldValue(peckerBuilder.options.assets[0], 'external', 'array', [
+          {
+            name: 'Pecker',
+            type: 'module'
+          }
+        ]);
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'transform', 'array', []);
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'watch', 'array', []);
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'skipHash', 'boolean', false);
@@ -280,6 +282,51 @@ describe('Unit: PeckerBuilder.options', function () {
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'type', 'string', 'url');
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'name', 'string', 'bootstrap');
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'url', 'string', 'linkurl');
+      });
+    });
+
+    describe('Pecker.Builder._shouldSkipHash() *private method*', function () {
+      it('should satisfy that if global skipHash is defined, it overrides asset skipHash. Else use asset skipHash value', function () {
+
+        var testTable = [
+          { expected: false },
+          { a: false, expected: false },
+          { a: true, expected: true },
+          { g: false, expected: false },
+          { g: false, a: false, expected: false },
+          { g: false, a: true, expected: false },
+          { g: true, expected: true },
+          { g: true, a: false, expected: true },
+          { g: true, a: true, expected: true }
+        ];
+
+        function test(i, g, a, expected) {
+          var assetOptions = {
+            type: 'file',
+            name: 'test',
+            files: [],
+            skipHash: a
+          };
+          peckerBuilder = new PeckerBuilder({
+            skipHash: g,
+            assets: [
+              assetOptions
+            ]
+          });
+          if (expected === true) {
+            expect(peckerBuilder._shouldSkipHash(assetOptions), 'Expected _shouldSkipHash() to return true, test: #' + i).to.be.true;
+          } else if (expected === false) {
+            expect(peckerBuilder._shouldSkipHash(assetOptions), 'Expected _shouldSkipHash() to return false, test: #' + i).to.be.false;
+          } else {
+            // should not reach here
+            expect(true).to.not.be.true;
+          }
+        }
+
+        for (var i = 0; i < testTable.length; i++) {
+          test(i, testTable[i].g, testTable[i].a, testTable[i].expected);
+        }
+
       });
     });
   });
