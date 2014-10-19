@@ -53,7 +53,7 @@ module.exports = {
       type: 'folder',
       name: 'vendor',
       folder: './src/vendor/',
-      include: ['*.*'],
+      include: ['**/*.*'],
       exclude: [],
       transform: []
     },

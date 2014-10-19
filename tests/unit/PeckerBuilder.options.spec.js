@@ -200,7 +200,7 @@ describe('Unit: PeckerBuilder.options', function () {
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'name', 'string', 'app');
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'folder', 'string', path.join(process.cwd(), 'app'));
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'watch', 'array', []);
-        expectPeckerFieldValue(peckerBuilder.options.assets[0], 'include', 'array', ['*.*']);
+        expectPeckerFieldValue(peckerBuilder.options.assets[0], 'include', 'array', []);
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'exclude', 'array', []);
         expectPeckerFieldValue(peckerBuilder.options.assets[0], 'skipHash', 'boolean', false);
       });
