@@ -1,0 +1,56 @@
+{
+  "name": "pecker-docs",
+  "baseUrl": "/pecker/dist",
+  "assets": {
+    "sitePackage": {
+      "type": "package",
+      "names": [
+        "site.css",
+        "common.js",
+        "site.js"
+      ]
+    },
+    "site.css": {
+      "type": "file",
+      "url": "/pecker/dist/site.css",
+      "path": "/Users/hafiz/dev/pecker-docs/dist/site.css"
+    },
+    "common.js": {
+      "type": "browserify",
+      "url": "/pecker/dist/common.js",
+      "path": "/Users/hafiz/dev/pecker-docs/dist/common.js"
+    },
+    "site.js": {
+      "type": "browserify",
+      "url": "/pecker/dist/site.js",
+      "path": "/Users/hafiz/dev/pecker-docs/dist/site.js"
+    },
+    "fonts": {
+      "type": "folder",
+      "url": "/pecker/dist/fonts",
+      "path": "/Users/hafiz/dev/pecker-docs/dist/fonts"
+    },
+    "images": {
+      "type": "folder",
+      "url": "/pecker/dist/images",
+      "path": "/Users/hafiz/dev/pecker-docs/dist/images"
+    },
+    "Pecker": {
+      "type": "package",
+      "names": [
+        "pecker.js",
+        "pecker-loader.js"
+      ]
+    },
+    "pecker.js": {
+      "type": "browserify",
+      "url": "/pecker/dist/pecker.js",
+      "path": "/Users/hafiz/dev/pecker-docs/dist/pecker.js"
+    },
+    "pecker-loader.js": {
+      "type": "file",
+      "url": "/pecker/dist/pecker-loader.js",
+      "path": "/Users/hafiz/dev/pecker-docs/dist/pecker-loader.js"
+    }
+  }
+}

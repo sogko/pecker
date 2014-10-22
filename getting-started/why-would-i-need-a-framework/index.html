@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+<meta name="description" content="A modern assets management framework for your web application development">
+<title>Pecker &mdash; Why would I need a framework?</title>
+
+<link rel="shortcut icon" href="/pecker/img/1411844936_196741.ico">
+    <link rel="stylesheet" href="/pecker/dist/site.css"/>
+</head>
+
+<body>
+
+
+<div class="default-layout">
+    <div class="documentation-layout"
+     data-block-name="layouts/documentation"
+     data-block-type="runnable">
+
+    <div class="header">
+        <div class="documentation-header">
+    <div class="documentation-header__menu-button">
+        <div class="toc__menu-button">
+    <div class="collapsible-menu-button"
+     data-block-name="blocks/buttons/collapsible-menu-button"
+     data-block-type="component">
+    <button type="button">&#9776; PECKER</button>
+</div>
+</div>
+    </div>
+    <div class="documentation-header__content">
+        <a class="brand-simple" href="/pecker/">PECKER</a> &mdash; A modern assets management framework for your web application development
+    </div>
+</div>
+
+    </div>
+
+    <div class="content-row">
+        <div class="toc">
+            <nav class="toc__menu">
+
+    <ul class="toc__menu-items">
+
+        <li>
+            <p>Pecker</p>
+            <ul>
+                <li class=""><a class="nav-list-group-item-link" href="/pecker/">Home </a></li>
+            </ul>
+        </li>
+        
+        
+        
+        
+        
+        
+        <li>
+            <p>Getting Started</p>
+            <ul>
+                <li class=""><a href="/pecker/getting-started/overview/">Overview</a></li>
+                <li class=""><a href="/pecker/getting-started/what-is-an-asset/">What is an asset?</a></li>
+                <li class=""><a href="/pecker/getting-started/what-kind-of-assets-are-supported/">What kind of assets are supported?</a></li>
+                <li class=""><a href="/pecker/getting-started/how-is-pecker-different-from-other-build-tools/">How is Pecker different from other build tools?</a></li>
+                <li class="active"><a href="/pecker/getting-started/why-would-i-need-a-framework/">Why would I need a framework?</a></li>
+                
+            </ul>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        <li>
+            <p>Usages</p>
+            <ul>
+                <li class=""><a href="/pecker/usages/overview/">Overview</a></li>
+                <li class=""><a href="/pecker/usages/pecker-cli/">Pecker CLI</a></li>
+                <li class=""><a href="/pecker/usages/local-module/">Local Module</a></li>
+                <li class=""><a href="/pecker/usages/gulp-task/">Gulp Task</a></li>
+                
+            </ul>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        <li>
+            <p>Documentation</p>
+            <ul>
+                <li class=""><a href="/pecker/documentation/installation/">Installation</a></li>
+                <li class=""><a href="/pecker/documentation/pecker-cli/">Pecker CLI</a></li>
+                
+            </ul>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li>
+            <p>Developers</p>
+            <ul>
+                <li class=""><a href="/pecker/developers/contributing/">Contributing</a></li>
+                <li class=""><a href="/pecker/developers/changelog/">Changelog</a></li>
+                <li class=""><a href="/pecker/developers/license/">License</a></li>
+                
+            </ul>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </ul>
+
+</nav>
+
+        </div>
+
+        <div class="content-column">
+
+            <div class="content-header">
+                <h2>Why would I need a framework?
+                    
+                </h2>
+            </div>
+
+            <div class="content">
+                <h4 id="wrangle-a-variety-of-assets-with-complex-dependencies-easily">Wrangle a variety of assets with complex dependencies easily</h4>
+
+<p>A web project typically may start with something as simple as the following set of assets:</p>
+
+<ul>
+<li>One HTML file</li>
+<li>One stylesheet (.css) file</li>
+<li>Maybe a couple of images</li>
+</ul>
+
+<p>At this stage of development, it may seems trivial managing your assets.
+But as your project gets bigger and complex, you might find yourself trying to juggle a huge number of assets.</p>
+
+<p>Things might start to feel that its getting out of hand but with a little elbow grease, you probably might be able to devise the most ingenious folder structure.</p>
+
+<p>But how about when those assets start to have complex dependencies among itselves? </p>
+
+<p>Here&#39;s a typical scenario for a medium-sized project:</p>
+
+<blockquote>
+<p>Your client-side JavaScript application file requires a <strong>custom vendor</strong> code, that depends on multiple <strong>Bower</strong>-managed component, along with several <strong>external scripts</strong> hosted on different <strong>CDN networks</strong>. Let&#39;s not get started on <strong>stylesheets and images</strong> that needed to be included.
+Oh, have we mentioned that the <strong>dependency order</strong> mattered too. Also, let&#39;s not forget about having to need to refer to the URL path to your <strong>HTML templates</strong>  within your application on the client-side.</p>
+</blockquote>
+
+<p>Phew.</p>
+
+<p>We both know that this could easily happen to you.</p>
+
+<p>Because it happened before.</p>
+
+<p><strong>Pecker framework helps you keep your sanity levels in check with ways to organize your assets in a logical manner.</strong></p>
+
+<hr>
+
+<h4 id="pre--and-post-processing-transformation-to-assets">Pre- and post-processing transformation to assets</h4>
+
+<p>There&#39;s a high chance that you are already dealing with an automated build workflow for your project using Grunt, Gulp or [insert latest and kewlest build tool here]. </p>
+
+<p>A typical web development scenario would involve the following:</p>
+
+<ul>
+<li>Pre-process dynamic stylesheet files (LessCSS, SASS etc) into CSS stylesheets files.</li>
+<li>Auto-prefix vendor-specific prefixes to CSS rules.</li>
+<li>Optimize your CSS stylesheet for improved performance through minification.</li>
+<li>Optimize your JavaScript files for improved performances through minification and name-mangling.</li>
+<li>Bundling your Javascript files for use in browsers using Browserify</li>
+<li>And much more!</li>
+</ul>
+
+<p>In short, there is no shortage of use-cases for processing your assets before serving them up in your web applications.</p>
+
+<p><strong>Pecker framework provides various mechanisms to handle pre- and post-processing for different types of assets to fit your project.</strong></p>
+
+<hr>
+
+<h4 id="overcoming-hurdles-with-browser-caching-and-versioning-issues">Overcoming hurdles with browser-caching and versioning issues</h4>
+
+<p>Have you been in a similar situation where you make modifications to, for example a CSS stylesheet, for a web application you&#39;re developing, but no matter how many times you refresh the browser, the changes refuse to show up? </p>
+
+<p>Out of desperation, you manually clear your browser cache and re-launch it. Well, after one too many times, you can see how frustrating it is and how it hinders your productivity.</p>
+
+<p>Browser caching are godsend for visitors using your web application (faster response time and all that), but as a developer, you&#39;d probably had yourself convinced at one point of time that it was forged by the Devil himself just to make your application development a living hell.</p>
+
+<p>Try googling <a href="https://www.google.com.sg/#q=cache+busting">cache busting</a>, and it will show you a plethora of ways to deal with aggressive browser cache.</p>
+
+<p><strong>Pecker framework has built-in mechanisms for cache-busting with added advantage of versioning 
+your assets as well.</strong></p>
+
+<hr>
+
+<h4 id="bridging-a-gap-between-server-and-client-side-code,-making-assets-available-on-both-ends">Bridging a gap between server and client-side code, making assets available on both ends</h4>
+
+<p>A simple scenario for this would be HTML templates for your web application. Sometimes you find yourself needing to refer to a template file on both the front-end and the back-end code. Well, what&#39;s the problem?</p>
+
+<p>The issue here is that depending on where you are and what you need, you might be looking for either </p>
+
+<ul>
+<li>the <strong>file path</strong> to the asset on the server&#39;s file system, for eg: <code>/opt/apps/server/static/templates/view.hbs</code></li>
+<li>the <strong>URL path</strong> of the asset relative to the base root URL, for eg: <code>/assets/templates/view.hbs</code></li>
+</ul>
+
+<p><strong>Pecker framework bridges the gap between server and client-side code by making available full-featured APIs for both side that you can use to work with your assets, not against it.</strong></p>
+
+            </div>
+
+            <hr/>
+        </div>
+    </div>
+</div>
+
+<footer class="documentation-layout__sticky-footer">
+    <div class="simple-footer">
+    <a href="#">
+        <!--<img src="/pecker/dist/images/icons/1411844934_open-box.png" width="35" height="35" alt="">-->
+    </a>
+    <br/>
+    <a href="https://github.com/sogko/pecker">
+        PECKER
+    </a> was engineered with highest degree of penetrative precision by
+    <a href="https://twitter.com/sogko">@sogko</a>
+</div>
+</footer>
+
+</div>
+
+<script src="/pecker/dist/common.js"></script>
+<script src="/pecker/dist/site.js"></script>
+<script>
+    // bootstrap SiteEngine
+    require('site').bootstrap();
+</script>
+</body>
+</html>

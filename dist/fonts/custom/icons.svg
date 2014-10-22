@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2014-10-21: Created.
+-->
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>
+Created by FontForge 20120731 at Tue Oct 21 20:33:46 2014
+ By Hafiz Ismail
+Created by Hafiz Ismail with FontForge 2.0 (http://fontforge.sf.net)
+</metadata>
+<defs>
+<font id="icons" horiz-adv-x="512" >
+  <font-face 
+    font-family="icons"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="512"
+    panose-1="2 0 6 3 0 0 0 0 0 0"
+    ascent="448"
+    descent="-64"
+    bbox="-0.25 -32 512 433"
+    underline-thickness="25.6"
+    underline-position="-51.2"
+    unicode-range="U+F100-F101"
+  />
+    <missing-glyph />
+    <glyph glyph-name="uniF101" unicode="&#xf101;" 
+d="M512 153l-256 199l-256 -199v81l256 199l256 -199v-81zM448 160v-192h-128v128h-128v-128h-128v192l192 144z" />
+    <glyph glyph-name="uniF100" unicode="&#xf100;" horiz-adv-x="440" 
+d="M30 305l190 -183l190 183c7 7 18 7 25 0s7 -18 0 -25l-202 -201c-7 -7 -18 -7 -25 0l-203 201c-7 7 -7 18 0 25s18 7 25 0z" />
+  </font>
+</defs></svg>
