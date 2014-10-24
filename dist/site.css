@@ -440,17 +440,23 @@ td, th {
   display: none; }
 
 /* Site Overlay Active Appearance */
-.pussshy__site-overlay--active .pussshy__site-overlay {
-  display: block;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 9998;
-  background-color: rgba(0, 0, 0, 0.5);
-  -webkit-animation: fade 500ms;
-          animation: fade 500ms; }
+.pussshy__site-overlay--active {
+  /* prevent scrolling of your site when menu is open */
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  position: fixed; }
+  .pussshy__site-overlay--active .pussshy__site-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9998;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-animation: fade 500ms;
+            animation: fade 500ms; }
 
 /* Site Overlay Animation */
 @-webkit-keyframes fade {
@@ -470,8 +476,6 @@ td, th {
 html, body {
   /* disable webkit tap highlight */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  /* prevent scrolling of your site when menu is open */
-  overflow-x: hidden;
   height: 100%; }
 
 @font-face {
@@ -836,13 +840,13 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 4.56923px;
   margin-bottom: 0.25385rem; }
 
-.giga, .index__header h1 {
+.giga {
   font-size: 90px;
   font-size: 5rem;
   margin-bottom: 5.94px;
   margin-bottom: 0.33rem; }
 
-.mega {
+.mega, .index__header h1 {
   font-size: 72px;
   font-size: 4rem;
   margin-bottom: 7.425px;
@@ -866,19 +870,19 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 14.85px;
   margin-bottom: 0.825rem; }
 
-.delta, h4, .lead, .color-palette-showcase .color-palette-container .color-specs h4, .index__get-started-call-to-action {
+.delta, h4, .lead, .color-palette-showcase .color-palette-container .color-specs h4 {
   font-size: 24px;
   font-size: 1.33333rem;
   margin-bottom: 22.275px;
   margin-bottom: 1.2375rem; }
 
-.epsilon, h5 {
+.epsilon, h5, .index__get-started-call-to-action {
   font-size: 21px;
   font-size: 1.16667rem;
   margin-bottom: 25.45714px;
   margin-bottom: 1.41429rem; }
 
-.zeta, h6, .grid-items .grid-item h1 {
+.zeta, h6, .index__header .lead, .grid-items .grid-item h1 {
   font-size: 18px;
   font-size: 1rem;
   margin-bottom: 29.7px;
@@ -1482,6 +1486,10 @@ a {
   text-align: center; }
   .index__header .lead {
     margin: 1.618em auto; }
+    @media screen and (min-width: 992px) {
+      .index__header .lead {
+        font-size: 24px;
+        font-size: 1.33333rem; } }
   .index__header p {
     margin: 0 auto 0.61805em;
     padding: 0 1.618em;
