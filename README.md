@@ -337,22 +337,13 @@ You can do `pecker prune` to clear out duplicate and old physical assets.
 * Pecker config
     * would it be useful to have a `description` field for each asset?
     * ~~`skipHash`~~
-* Pecker CLI
-    * ~~default to `help`~~
-    * Add new actions
-        * `clean`
-        * `prune`
-        * ~~`add`~~
-        * `remove`
-    * ~~`destDir` is relative to `baseDir`~~
-* Built-in transforms
-	* ~~image minifier (using gulp-imagemin)~~
-	* sourcemaps (using gulp-sourcemaps)
-	* ~~LESS-CSS~~
-	* ~~pass in peckerOptions and assetOptions to built-in transform~~
-	* ~~automatically resolve path-related arguments for built-in transforms~~
+    * Change default to always skipHash: true? Not sure which is better.    
+    * each asset may have a different destDir and url?
+    * build dependencies: allow an asset to be build after building anotherr asset
+    	* use-case: compile .scss files, compile .less files, concat and minify both
 * Additional asset types
-	* images (? should we simply stick with having a generic `file` type) 
+	* images (? should we simply stick with having a generic `file` type)
+	    * we can do image resize or generate different dimensions from a single source image
 	* textual content (?)
 	* internationalization / localization (?)
 	* a `bower` type?
@@ -365,11 +356,33 @@ You can do `pecker prune` to clear out duplicate and old physical assets.
 	    * and usually npm modules that can work in browser, would have a bower registry entry anyway
 	* how about `component`?
 	* support `duo` (similar fashion to `browserify`)
-* In-line assets
+* Pecker CLI
+    * ~~default to `help`~~
+    * Add new actions
+        * `clean`
+        * `prune`
+        * ~~`add`~~
+        * `remove`
+    * ~~`destDir` is relative to `baseDir`~~
+* Pecker.Builder
+    * watchAssets(): use default if opt.watch is not defined
+    * watchAssets to emit events or accept event hooks
+* Pecker.Assets
+    * How to expose asset data to SASS files? (These are non-JavaScript)
+    	* For other .scss files, @import as usual, use `includePaths` to let `sass` find it .
+    	* For urls (fonts/images), currently ew can hardcode it. but find a solution to get the right url?
+    * Client-side: Make Pecker available in `window`, and maybe through angular
+    * In-line assets
 	* Create an inline content for existing asset.
 	* For eg: inlined images, inlined scripts, inlined stylesheets
-	* Why would you want to inline? Reduce number of HTTP requests.
-* Pre-fetch assets using ```<link rel="prefetch" ... />``` supported in HTML5
+	* Why would you want to inline? Reduce number of HTTP requests
+	* Pre-fetch assets using ```<link rel="prefetch" ... />``` supported in HTML5
+* Built-in transforms
+	* ~~image minifier (using gulp-imagemin)~~
+	* sourcemaps (using gulp-sourcemaps)
+	* ~~LESS-CSS~~
+	* ~~pass in peckerOptions and assetOptions to built-in transform~~
+	* ~~automatically resolve path-related arguments for built-in transforms~~
 * Tutorials
     * Show an example of using Pecker.Assets and a static file server to always serve the latest version of an asset. (For eg: accessing ```/static/style.css``` will serve ```/static/style.9d29jd.css```)
     * Use Pecker.Assets in Jekyll
