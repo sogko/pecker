@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <meta name="description" content="A modern assets management framework for your web application development">
-  <title>Pecker &mdash; Pecker CLI</title>
+  <title>Pecker &mdash; Concepts</title>
   <link rel="shortcut icon" href="/pecker/img/1411844936_196741.ico">
   <link rel="stylesheet" href="/pecker/dist/site.css" /> </head>
 
@@ -45,7 +45,7 @@
                 <ul>
                   <li class=""><a href="/pecker/getting-started/overview/">Overview</a>
                   </li>
-                  <li class=""><a href="/pecker/getting-started/concepts/">Concepts</a>
+                  <li class="active"><a href="/pecker/getting-started/concepts/">Concepts</a>
                   </li>
                   <li class=""><a href="/pecker/getting-started/how-is-pecker-different-from-other-build-tools/">How is Pecker different from other build tools?</a>
                   </li>
@@ -60,7 +60,7 @@
                   </li>
                   <li class=""><a href="/pecker/usages/installation/">Installation</a>
                   </li>
-                  <li class="active"><a href="/pecker/usages/pecker-cli/">Pecker CLI</a>
+                  <li class=""><a href="/pecker/usages/pecker-cli/">Pecker CLI</a>
                   </li>
                   <li class=""><a href="/pecker/usages/local-module/">Local Module</a>
                   </li>
@@ -86,15 +86,40 @@
         </div>
         <div class="content-column">
           <div class="content-header">
-            <h2>Pecker CLI
+            <h2>Concepts
                     
                 </h2> </div>
           <div class="content">
-            <h4 id="using-pecker-as-a-command-line-program">Using Pecker as a command-line program</h4>
+            <p>This section outlines some relevant concepts pertaining to what Pecker is trying to achieve.</p>
+            <hr>
+            <h4 id="what-is-an-asset?">What is an asset?</h4>
+            <p>An asset is simply any type of content that you want to make available on a HTML page in your web application.</p>
+            <p>This includes &mdash; but not limited to:</p>
             <ul>
-              <li>need to install as a global module</li>
-              <li>can run Pecker CLI as <code>pecker</code> in your terminal</li>
-              <li>talk about pecker.json</li>
+              <li>images</li>
+              <li>audio files</li>
+              <li>scripts</li>
+              <li>stylesheets</li>
+              <li>icons</li>
+              <li>external URL resources</li>
+              <li>and many more!</li>
+            </ul>
+            <hr>
+            <h4 id="what-kind-of-assets-are-supported?">What kind of assets are supported?</h4>
+            <div style="text-align:center;"> <strong>EVERY ONE OF THEM.</strong>
+              <br/> <img src="http://i.imgur.com/bzeiiDD.gif" / style="width: 100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;"> </div>
+            <p>In all seriousness, every kind of assets can be supported and managed using Pecker framework.</p>
+            <p>In Pecker, any kind of asset can fall into at least one of the following Pecker-defined <strong>asset types</strong>:</p>
+            <ul>
+              <li>a physical file (i.e. a <strong>file asset</strong>), for eg: JavaScript scripts, CSS/Less/Sass stylesheets</li>
+              <li>an entire folder and its content (including sub-folders) (i.e. a <strong>folder asset</strong>)</li>
+              <li>a URL referring to an external file asset (i.e. a <strong>URL asset</strong> hosted in a CDN)</li>
+              <li>a CommonJS module that can be browserified (i.e. a <strong>browserify</strong> asset, a special asset type)</li>
+              <li>an ordered set of assets (i.e. an asset <strong>package</strong>); can also include another asset package (<strong>nested package</strong>)</li>
+            </ul>
+            <h5 id="related-pages">Related pages</h5>
+            <ul>
+              <li>Read more about <a href="">Pecker&#39;s asset types</a>.</li>
             </ul>
           </div>
           <hr/> </div>

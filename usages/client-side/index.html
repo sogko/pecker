@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <meta name="description" content="A modern assets management framework for your web application development">
-  <title>Pecker &mdash; Pecker CLI</title>
+  <title>Pecker &mdash; Client-side</title>
   <link rel="shortcut icon" href="/pecker/img/1411844936_196741.ico">
   <link rel="stylesheet" href="/pecker/dist/site.css" /> </head>
 
@@ -60,13 +60,13 @@
                   </li>
                   <li class=""><a href="/pecker/usages/installation/">Installation</a>
                   </li>
-                  <li class="active"><a href="/pecker/usages/pecker-cli/">Pecker CLI</a>
+                  <li class=""><a href="/pecker/usages/pecker-cli/">Pecker CLI</a>
                   </li>
                   <li class=""><a href="/pecker/usages/local-module/">Local Module</a>
                   </li>
                   <li class=""><a href="/pecker/usages/gulp-task/">Gulp Task</a>
                   </li>
-                  <li class=""><a href="/pecker/usages/client-side/">Client-side</a>
+                  <li class="active"><a href="/pecker/usages/client-side/">Client-side</a>
                   </li>
                 </ul>
               </li>
@@ -86,16 +86,36 @@
         </div>
         <div class="content-column">
           <div class="content-header">
-            <h2>Pecker CLI
+            <h2>Client-side
                     
                 </h2> </div>
           <div class="content">
-            <h4 id="using-pecker-as-a-command-line-program">Using Pecker as a command-line program</h4>
-            <ul>
-              <li>need to install as a global module</li>
-              <li>can run Pecker CLI as <code>pecker</code> in your terminal</li>
-              <li>talk about pecker.json</li>
-            </ul>
+            <h4 id="using-pecker-as-a-client-side-script-in-browser">Using Pecker as a client-side script in browser</h4>
+            <p>Using Pecker in your Gulp build workflow is as simple as using the Pecker module directly in your <code>gulpfile.js</code> and defining a gulp task.</p>
+            <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// gulpfile.js</span>
+
+<span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Pecker</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;pecker&#39;</span><span class="p">);</span>
+
+<span class="c1">// define gulp task using Pecker.Builder</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;build&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// define Pecker.Builder options</span>
+    <span class="kd">var</span> <span class="nx">opts</span> <span class="o">=</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
+    <span class="c1">// or require a .js or json file containing configured options</span>
+    <span class="c1">// for eg: var opts = require(&#39;./pecker.json&#39;);</span>
+
+    <span class="c1">// create Pecker.Builder instance</span>
+    <span class="kd">var</span> <span class="nx">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Pecker</span><span class="p">.</span><span class="nx">Builder</span><span class="p">(</span><span class="nx">opts</span><span class="p">);</span>
+
+    <span class="c1">// build assets defined in `opts`</span>
+    <span class="nx">builder</span><span class="p">.</span><span class="nx">buildAssets</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Build completed&#39;</span><span class="p">);</span>
+        <span class="nx">done</span><span class="p">();</span>
+    <span class="p">});</span> 
+<span class="p">});</span></code></pre>
+            </div>
+            <p>Refer to API documentation to explore more in depth.</p>
           </div>
           <hr/> </div>
       </div>

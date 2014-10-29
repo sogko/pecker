@@ -45,9 +45,7 @@
                 <ul>
                   <li class=""><a href="/pecker/getting-started/overview/">Overview</a>
                   </li>
-                  <li class=""><a href="/pecker/getting-started/what-is-an-asset/">What is an asset?</a>
-                  </li>
-                  <li class=""><a href="/pecker/getting-started/what-kind-of-assets-are-supported/">What kind of assets are supported?</a>
+                  <li class=""><a href="/pecker/getting-started/concepts/">Concepts</a>
                   </li>
                   <li class=""><a href="/pecker/getting-started/how-is-pecker-different-from-other-build-tools/">How is Pecker different from other build tools?</a>
                   </li>
@@ -60,20 +58,15 @@
                 <ul>
                   <li class=""><a href="/pecker/usages/overview/">Overview</a>
                   </li>
+                  <li class=""><a href="/pecker/usages/installation/">Installation</a>
+                  </li>
                   <li class=""><a href="/pecker/usages/pecker-cli/">Pecker CLI</a>
                   </li>
                   <li class="active"><a href="/pecker/usages/local-module/">Local Module</a>
                   </li>
                   <li class=""><a href="/pecker/usages/gulp-task/">Gulp Task</a>
                   </li>
-                </ul>
-              </li>
-              <li>
-                <p>Documentation</p>
-                <ul>
-                  <li class=""><a href="/pecker/documentation/installation/">Installation</a>
-                  </li>
-                  <li class=""><a href="/pecker/documentation/pecker-cli/">Pecker CLI</a>
+                  <li class=""><a href="/pecker/usages/client-side/">Client-side</a>
                   </li>
                 </ul>
               </li>
@@ -97,9 +90,9 @@
                     
                 </h2> </div>
           <div class="content">
-            <h3 id="using-pecker-as-a-local-module">Using Pecker as a local module</h3>
+            <h4 id="using-pecker-as-a-client-side-script-in-your-browser">Using Pecker as a client-side script in your browser</h4>
             <p>This is useful if you want to <strong>create your own custom build workflow</strong>.</p>
-            <p>You can also <strong>integrate Pecker into your existing build</strong> <em>(in your Gruntfile.js or Gulpfile.js, for example)</em>.</p>
+            <p>You can also <strong>integrate Pecker into your existing build</strong> <em>(in your <code>Gruntfile.js</code> or <code>gulpfile.js</code>, for example)</em>.</p>
             <hr>
             <p>Simply install Pecker module and require it in your code.</p>
             <p>Here&#39;s an example on how to use <code>Pecker.Builder</code> directly</p>
@@ -107,13 +100,13 @@
 
 <span class="c1">// define Pecker.Builder options</span>
 <span class="kd">var</span> <span class="nx">opts</span> <span class="o">=</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
-<span class="c1">// or require an external .js or .json file containing configured options</span>
+<span class="c1">// or require a .js or json file containing configured options</span>
 <span class="c1">// for eg: var opts = require(&#39;./pecker.json&#39;);</span>
 
 <span class="c1">// create Pecker.Builder instance</span>
 <span class="kd">var</span> <span class="nx">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Pecker</span><span class="p">.</span><span class="nx">Builder</span><span class="p">(</span><span class="nx">opts</span><span class="p">);</span>
 
-<span class="c1">// run build</span>
+<span class="c1">// build assets defined in `opts`</span>
 <span class="nx">builder</span><span class="p">.</span><span class="nx">buildAssets</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Build completed&#39;</span><span class="p">);</span>
 <span class="p">);</span></code></pre>

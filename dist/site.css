@@ -1098,6 +1098,13 @@ a {
   a:active {
     color: #1379ec; }
 
+.highlight {
+  border: 1px solid whitesmoke;
+  border-radius: 10px;
+  background-color: whitesmoke; }
+  .highlight pre {
+    margin: 1.618em 2.61792em; }
+
 .brand-simple, .brand-simplea, .brand-simple:visited, .brand-simple:hover, .brand-simple:active {
   color: #a5a6aa; }
 
@@ -1215,7 +1222,7 @@ a {
   background-color: #08080a; }
 
 .simple-footer {
-  height: 300px;
+  height: 210px;
   font-size: 0.9em;
   padding: 4.2358em;
   text-align: center;
@@ -1372,13 +1379,13 @@ a {
   height: 100%;
   margin: 0 auto -155px;
   /* the bottom margin is the negative value of the footer's height */
-  margin-bottom: -300px; }
+  margin-bottom: -210px; }
   .documentation-layout:after {
     content: "";
     display: table;
     clear: both; }
   .documentation-layout:after {
-    height: 300px; }
+    height: 210px; }
   .documentation-layout .header {
     display: block;
     max-width: 68em;
@@ -1430,7 +1437,7 @@ a {
  }
 
 .documentation-layout__sticky-footer .sticky-footer {
-  height: 300px; }
+  height: 210px; }
 
 .page-layout {
   min-height: 100%;
@@ -1439,13 +1446,13 @@ a {
   height: 100%;
   margin: 0 auto -155px;
   /* the bottom margin is the negative value of the footer's height */
-  margin-bottom: -300px; }
+  margin-bottom: -210px; }
   .page-layout:after {
     content: "";
     display: table;
     clear: both; }
   .page-layout:after {
-    height: 300px; }
+    height: 210px; }
   .page-layout .header {
     display: block;
     max-width: 68em;
@@ -1462,7 +1469,7 @@ a {
       clear: both; }
 
 .page-layout__sticky-footer .sticky-footer {
-  height: 300px; }
+  height: 210px; }
 
 .blocks-page dt {
   font-weight: normal;
@@ -1513,15 +1520,10 @@ a {
   .index__quick-start .highlight {
     text-align: left;
     margin: 1.618em auto;
-    border: 1px solid whitesmoke;
-    border-radius: 10px;
-    background-color: whitesmoke;
     width: 80%; }
     @media screen and (min-width: 992px) {
       .index__quick-start .highlight {
         width: 800px; } }
-    .index__quick-start .highlight pre {
-      margin: 1.618em 2.61792em; }
   .index__quick-start .control-section {
     margin-top: 4.2358em; }
 

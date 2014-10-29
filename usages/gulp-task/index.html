@@ -45,9 +45,7 @@
                 <ul>
                   <li class=""><a href="/pecker/getting-started/overview/">Overview</a>
                   </li>
-                  <li class=""><a href="/pecker/getting-started/what-is-an-asset/">What is an asset?</a>
-                  </li>
-                  <li class=""><a href="/pecker/getting-started/what-kind-of-assets-are-supported/">What kind of assets are supported?</a>
+                  <li class=""><a href="/pecker/getting-started/concepts/">Concepts</a>
                   </li>
                   <li class=""><a href="/pecker/getting-started/how-is-pecker-different-from-other-build-tools/">How is Pecker different from other build tools?</a>
                   </li>
@@ -60,20 +58,15 @@
                 <ul>
                   <li class=""><a href="/pecker/usages/overview/">Overview</a>
                   </li>
+                  <li class=""><a href="/pecker/usages/installation/">Installation</a>
+                  </li>
                   <li class=""><a href="/pecker/usages/pecker-cli/">Pecker CLI</a>
                   </li>
                   <li class=""><a href="/pecker/usages/local-module/">Local Module</a>
                   </li>
                   <li class="active"><a href="/pecker/usages/gulp-task/">Gulp Task</a>
                   </li>
-                </ul>
-              </li>
-              <li>
-                <p>Documentation</p>
-                <ul>
-                  <li class=""><a href="/pecker/documentation/installation/">Installation</a>
-                  </li>
-                  <li class=""><a href="/pecker/documentation/pecker-cli/">Pecker CLI</a>
+                  <li class=""><a href="/pecker/usages/client-side/">Client-side</a>
                   </li>
                 </ul>
               </li>
@@ -97,10 +90,9 @@
                     
                 </h2> </div>
           <div class="content">
-            <h3 id="using-pecker-as-a-gulp-task">Using Pecker as a Gulp task</h3>
+            <h4 id="using-pecker-as-a-gulp-task">Using Pecker as a Gulp task</h4>
             <p>Using Pecker in your Gulp build workflow is as simple as using the Pecker module directly in your <code>gulpfile.js</code> and defining a gulp task.</p>
             <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// gulpfile.js</span>
-
 <span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp&#39;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">Pecker</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;pecker&#39;</span><span class="p">);</span>
 
@@ -109,7 +101,7 @@
 
     <span class="c1">// define Pecker.Builder options</span>
     <span class="kd">var</span> <span class="nx">opts</span> <span class="o">=</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
-    <span class="c1">// or require an external .js or .json file containing configured options</span>
+    <span class="c1">// or require a .js or json file containing configured options</span>
     <span class="c1">// for eg: var opts = require(&#39;./pecker.json&#39;);</span>
 
     <span class="c1">// create Pecker.Builder instance</span>

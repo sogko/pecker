@@ -45,9 +45,7 @@
                 <ul>
                   <li class=""><a href="/pecker/getting-started/overview/">Overview</a>
                   </li>
-                  <li class=""><a href="/pecker/getting-started/what-is-an-asset/">What is an asset?</a>
-                  </li>
-                  <li class=""><a href="/pecker/getting-started/what-kind-of-assets-are-supported/">What kind of assets are supported?</a>
+                  <li class=""><a href="/pecker/getting-started/concepts/">Concepts</a>
                   </li>
                   <li class=""><a href="/pecker/getting-started/how-is-pecker-different-from-other-build-tools/">How is Pecker different from other build tools?</a>
                   </li>
@@ -60,20 +58,15 @@
                 <ul>
                   <li class=""><a href="/pecker/usages/overview/">Overview</a>
                   </li>
+                  <li class=""><a href="/pecker/usages/installation/">Installation</a>
+                  </li>
                   <li class=""><a href="/pecker/usages/pecker-cli/">Pecker CLI</a>
                   </li>
                   <li class=""><a href="/pecker/usages/local-module/">Local Module</a>
                   </li>
                   <li class=""><a href="/pecker/usages/gulp-task/">Gulp Task</a>
                   </li>
-                </ul>
-              </li>
-              <li>
-                <p>Documentation</p>
-                <ul>
-                  <li class=""><a href="/pecker/documentation/installation/">Installation</a>
-                  </li>
-                  <li class=""><a href="/pecker/documentation/pecker-cli/">Pecker CLI</a>
+                  <li class=""><a href="/pecker/usages/client-side/">Client-side</a>
                   </li>
                 </ul>
               </li>
@@ -97,6 +90,8 @@
                     
                 </h2> </div>
           <div class="content">
+            <p>This section outlines use-cases for why you would need a framework to manage your assets.</p>
+            <hr>
             <h4 id="wrangle-a-variety-of-assets-with-complex-dependencies-easily">Wrangle a variety of assets with complex dependencies easily</h4>
             <p>A web project typically may start with something as simple as the following set of assets:</p>
             <ul>
@@ -105,13 +100,13 @@
               <li>Maybe a couple of images</li>
             </ul>
             <p>At this stage of development, it may seems trivial managing your assets. But as your project gets bigger and complex, you might find yourself trying to juggle a huge number of assets.</p>
-            <p>Things might start to feel that its getting out of hand but with a little elbow grease, you probably might be able to devise the most ingenious folder structure.</p>
+            <p>Things might start to feel that its getting out of hand but with a little elbow grease, you probably might be able to devise the most ingenious folder structure to keep those files in line.</p>
             <p>But how about when those assets start to have complex dependencies among itselves? </p>
             <p>Here&#39;s a typical scenario for a medium-sized project:</p>
             <blockquote>
-              <p>Your client-side JavaScript application file requires a <strong>custom vendor</strong> code, that depends on multiple <strong>Bower</strong>-managed component, along with several <strong>external scripts</strong> hosted on different <strong>CDN networks</strong>.
-                Let&#39;s not get started on <strong>stylesheets and images</strong> that needed to be included. Oh, have we mentioned that the <strong>dependency order</strong> mattered too. Also, let&#39;s not forget about having to need to refer to
-                the URL path to your <strong>HTML templates</strong> within your application on the client-side.</p>
+              <p>Your client-side JavaScript application file requires a <strong>custom vendor</strong> code, that depends on multiple <strong>Bower</strong>-managed components, along with several <strong>external scripts</strong> hosted on different <strong>CDN networks</strong>.</p>
+              <p>Let&#39;s not get started on <strong>stylesheets and images</strong> that needed to be included.</p>
+              <p>Oh, have we mentioned that the <strong>dependency order</strong> mattered too. Also, don&#39;t forget about having to need to refer to the URL path to your <strong>HTML templates</strong> within your application on the client-side.</p>
             </blockquote>
             <p>Phew.</p>
             <p>We both know that this could easily happen to you.</p>
@@ -120,7 +115,7 @@
             </p>
             <hr>
             <h4 id="pre--and-post-processing-transformation-to-assets">Pre- and post-processing transformation to assets</h4>
-            <p>There&#39;s a high chance that you are already dealing with an automated build workflow for your project using Grunt, Gulp or [insert latest and kewlest build tool here]. </p>
+            <p>There&#39;s a high chance that you are already dealing with an automated build workflow for your project using Grunt, Gulp or <em>[insert latest and kewlest build tool here]</em>. </p>
             <p>A typical web development scenario would involve the following:</p>
             <ul>
               <li>Pre-process dynamic stylesheet files (LessCSS, SASS etc) into CSS stylesheets files.</li>
@@ -131,7 +126,8 @@
               <li>And much more!</li>
             </ul>
             <p>In short, there is no shortage of use-cases for processing your assets before serving them up in your web applications.</p>
-            <p><strong>Pecker framework provides various mechanisms to handle pre- and post-processing for different types of assets to fit your project.</strong>
+            <p><strong>Pecker framework provides various mechanisms to handle pre- and post-processing for different types of assets to fit your project,
+along with built-in transformations for typical use-cases</strong>
             </p>
             <hr>
             <h4 id="overcoming-hurdles-with-browser-caching-and-versioning-issues">Overcoming hurdles with browser-caching and versioning issues</h4>
@@ -153,6 +149,8 @@ your assets as well.</strong>
               <li>the <strong>URL path</strong> of the asset relative to the base root URL, for eg: <code>/assets/templates/view.hbs</code>
               </li>
             </ul>
+            <p>This is where is might get sticky trying to manage this meta-information about your assets.</p>
+            <p>Pecker helps by keeping track on your assets and providing you mechanisms to retrieve information <em>(such as the URL path and physical file path)</em> about your assets from both the front-end and back-end of your application.</p>
             <p><strong>Pecker framework bridges the gap between server and client-side code by making available full-featured APIs for both side that you can use to work with your assets, not against it.</strong>
             </p>
           </div>

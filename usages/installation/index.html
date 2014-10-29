@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <meta name="description" content="A modern assets management framework for your web application development">
-  <title>Pecker &mdash; Pecker CLI</title>
+  <title>Pecker &mdash; Installation</title>
   <link rel="shortcut icon" href="/pecker/img/1411844936_196741.ico">
   <link rel="stylesheet" href="/pecker/dist/site.css" /> </head>
 
@@ -58,9 +58,9 @@
                 <ul>
                   <li class=""><a href="/pecker/usages/overview/">Overview</a>
                   </li>
-                  <li class=""><a href="/pecker/usages/installation/">Installation</a>
+                  <li class="active"><a href="/pecker/usages/installation/">Installation</a>
                   </li>
-                  <li class="active"><a href="/pecker/usages/pecker-cli/">Pecker CLI</a>
+                  <li class=""><a href="/pecker/usages/pecker-cli/">Pecker CLI</a>
                   </li>
                   <li class=""><a href="/pecker/usages/local-module/">Local Module</a>
                   </li>
@@ -86,15 +86,32 @@
         </div>
         <div class="content-column">
           <div class="content-header">
-            <h2>Pecker CLI
+            <h2>Installation
                     
                 </h2> </div>
           <div class="content">
-            <h4 id="using-pecker-as-a-command-line-program">Using Pecker as a command-line program</h4>
+            <p>You can choose to install Pecker through one of the following ways (or both, if you want):</p>
             <ul>
-              <li>need to install as a global module</li>
-              <li>can run Pecker CLI as <code>pecker</code> in your terminal</li>
-              <li>talk about pecker.json</li>
+              <li>as a command-line interpreter (CLI) program, allowing you to run Pecker from any directory</li>
+              <li>as a local NodeJS module within your project directory</li>
+            </ul>
+            <hr>
+            <h4 id="to-install-pecker-cli">To install Pecker CLI</h4>
+            <p>Installing Pecker CLI program allows you to run Pecker from any directory. It also allows you to quickly initialize your project to start using Pecker easily.</p>
+            <p>Think of Pecker CLI as a butler, helping you do to perform the menial tasks. You might not necessarily need him every time, but it might be just nice to have around. </p>
+            <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm install pecker-cli -g</code></pre>
+            </div>
+            <hr>
+            <h4 id="to-install-pecker-module-locally-within-your-project-directory">To install Pecker module locally within your project directory</h4>
+            <p>Installing it as a local NodeJS module allows you to interact with Pecker APIs directly in your code.</p>
+            <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd</span> /path/to/your/project
+<span class="nv">$ </span>npm install pecker</code></pre>
+            </div>
+            <hr>
+            <h4 id="related-pages">Related pages</h4>
+            <ul>
+              <li>Read <a href="/pecker/documentation/usages">Usages</a> for ways to use and interact with Pecker APIs.</li>
+              <li>See the documentation on using the Pecker CLI.</li>
             </ul>
           </div>
           <hr/> </div>
