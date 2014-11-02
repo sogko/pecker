@@ -5,6 +5,8 @@
 var PECKER_CONFIG_FILENAME = 'pecker.json';
 var path = require('path');
 var _ = require('lodash');
+var figlet = require('figlet');
+var chalk = require('chalk');
 var inquirer = require('inquirer');
 var fs = require('fs');
 var jf = require('jsonfile');
@@ -501,6 +503,25 @@ function promptAddAsset() {
 // perform action
 switch (action) {
   case 'help':
+    console.log();
+    console.log(figlet.textSync('PECKER', {
+      font: 'Big',
+      horizontalLayout: 'default',
+      verticalLayout: 'default'
+    }));
+
+    console.log('Usage:');
+    console.log('  ' + chalk.cyan('pecker') + ' <action> [<args>] [<options>]');
+    console.log();
+
+    console.log('Actions:');
+    console.log('  add           Interactively add a new asset definition in `pecker.json`.');
+    console.log('  build         Build all assets defined in `pecker.json`.');
+    console.log('  help          Display help information about Pecker');
+    console.log('  init          Interactively create a `pecker.json`.');
+    console.log('  watch         Watch all assets defined in `pecker.json` and build on changes');
+    console.log();
+
     yargs.showHelp();
     process.exit(0);
     break;
@@ -538,6 +559,6 @@ switch (action) {
     promptAddAsset();
     break;
   default:
-    printer.showMessage('error', 'Unknown command: ' + action);
+    printer.showMessage('error', 'Unknown action: ' + action);
     break;
 }
