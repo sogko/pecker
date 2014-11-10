@@ -1098,12 +1098,41 @@ a {
   a:active {
     color: #1379ec; }
 
+code, kbd, pre, samp {
+  line-height: 1.4em; }
+
+code {
+  border: 1px solid #e1e1e2;
+  border-radius: 2px;
+  background-color: whitesmoke;
+  padding: 0.2em 0.5em;
+  margin: 0.2em 0.2em;
+  line-height: 0.8em;
+  word-wrap: normal;
+  -webkit-hyphens: none;
+     -moz-hyphens: none;
+      -ms-hyphens: none;
+          hyphens: none; }
+
 .highlight {
   border: 1px solid whitesmoke;
   border-radius: 10px;
-  background-color: whitesmoke; }
+  background-color: whitesmoke;
+  margin: auto auto 1.5em;
+  padding: 0; }
   .highlight pre {
     margin: 1.618em 2.61792em; }
+  .highlight code {
+    border: none;
+    background-color: inherit;
+    padding: 0;
+    margin: 0; }
+
+ul {
+  margin: auto auto 1.5em; }
+
+.config-list dt {
+  font-weight: bold; }
 
 .brand-simple, .brand-simplea, .brand-simple:visited, .brand-simple:hover, .brand-simple:active {
   color: #a5a6aa; }

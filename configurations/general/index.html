@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="description" content="A modern assets management framework for your web application development">
+  <title>Pecker &mdash; General configuration</title>
+  <link rel="shortcut icon" href="/pecker/img/1411844936_196741.ico">
+  <link rel="stylesheet" href="/pecker/dist/site.css" /> </head>
+
+<body>
+  <div class="default-layout">
+    <div class="documentation-layout" data-block-name="layouts/documentation" data-block-type="runnable">
+      <div class="header">
+        <div class="documentation-header">
+          <div class="documentation-header__menu-button">
+            <div class="toc__menu-button">
+              <div class="collapsible-menu-button" data-block-name="blocks/buttons/collapsible-menu-button" data-block-type="component">
+                <button type="button">&#9776; PECKER</button>
+              </div>
+            </div>
+          </div>
+          <div class="documentation-header__content"> <a class="brand-simple" href="/pecker/">PECKER</a> &mdash; A modern assets management framework for your web application development </div>
+        </div>
+      </div>
+      <div class="content-row">
+        <div class="toc">
+          <nav class="toc__menu">
+            <ul class="toc__menu-items">
+              <li>
+                <p>Pecker</p>
+                <ul>
+                  <li class=""><a class="nav-list-group-item-link" href="/pecker/">Home </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Getting Started</p>
+                <ul>
+                  <li class=""><a href="/pecker/getting-started/overview/">Overview</a>
+                  </li>
+                  <li class=""><a href="/pecker/getting-started/concepts/">Concepts</a>
+                  </li>
+                  <li class=""><a href="/pecker/getting-started/how-is-pecker-different-from-other-build-tools/">How is Pecker different from other build tools?</a>
+                  </li>
+                  <li class=""><a href="/pecker/getting-started/why-would-i-need-a-framework/">Why would I need a framework?</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Usages</p>
+                <ul>
+                  <li class=""><a href="/pecker/usages/overview/">Overview</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/installation/">Installation</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/configuring-options/">Configuring options</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/pecker-cli/">Pecker CLI</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/local-module/">Local Module</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/gulp-task/">Gulp Task</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/client-side/">Client-side</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Asset Types</p>
+                <ul>
+                  <li class=""><a href="/pecker/asset-types/overview/">Overview</a>
+                  </li>
+                  <li class=""><a href="/pecker/asset-types/file-asset/">File asset type</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Configurations</p>
+                <ul>
+                  <li class="active"><a href="/pecker/configurations/general/">General configuration</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/asset-types/">Asset types</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/basic-asset/">Asset configuration</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/file-asset/"> &mdash; File asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/folder-asset/"> &mdash; Folder asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/browserify-asset/"> &mdash; Browserify asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/url-asset/"> &mdash; URL asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/package-asset/"> &mdash; Package asset</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Developers</p>
+                <ul>
+                  <li class=""><a href="/pecker/developers/contributing/">Contributing</a>
+                  </li>
+                  <li class=""><a href="/pecker/developers/changelog/">Changelog</a>
+                  </li>
+                  <li class=""><a href="/pecker/developers/license/">License</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="content-column">
+          <div class="content-header">
+            <h2>General configuration
+                    
+                </h2> </div>
+          <div class="content">
+            <hr>
+            <h5 id="name">name</h5>
+            <p>Name to identify your project.</p>
+            <ul>
+              <li>Default: <code>null</code>
+              </li>
+              <li>Possible values: Any valid <code>string</code>
+              </li>
+            </ul>
+            <h5 id="env">env</h5>
+            <p>Project environment.</p>
+            <ul>
+              <li>Required: <code>false</code>
+              </li>
+              <li>Default: <code>&#39;development&#39;</code>
+              </li>
+              <li>Possible values: <code>&#39;development&#39;</code> | <code>&#39;production&#39;</code>
+              </li>
+            </ul>
+            <h5 id="basedir">baseDir</h5>
+            <p>Base path of current working directory. Other path definitions will be relative to the base path.</p>
+            <ul>
+              <li>Required: <code>false</code>
+              </li>
+              <li>Default: <code>&#39;.&#39;</code> (relative to current working directory)</li>
+              <li>Possible values: Any valid <code>string</code>.</li>
+            </ul>
+            <h5 id="destdir">destDir</h5>
+            <p>Path of the destination directory where the assets will be written to.</p>
+            <p>The path can be an absolute path or relative to the <a href="#basedir"><code>baseDir</code></a>.</p>
+            <ul>
+              <li>Required: <code>false</code>
+              </li>
+              <li>Default: <code>&#39;dist&#39;</code>
+              </li>
+              <li>Possible values: Any valid <code>string</code>.</li>
+            </ul>
+            <h5 id="baseurl">baseUrl</h5>
+            <p>The base url path of which the assets will be served from.</p>
+            <p>For example, if <code>baseUrl</code> is <code>/static</code>, an asset with a name of <code>site.css</code> will have its url path as <code>/static/site.css</code>.</p>
+            <ul>
+              <li>Required: <code>false</code>
+              </li>
+              <li>Default: <code>&#39;/static&#39;</code>
+              </li>
+              <li>Possible values: Any valid URL.</li>
+            </ul>
+            <h5 id="assets">assets</h5>
+            <p>An array of asset configurations.</p>
+            <ul>
+              <li>Required: <code>false</code>
+              </li>
+              <li>Default: <code>[]</code>
+              </li>
+              <li>Possible values: An array of asset config options.</li>
+            </ul>
+            <p>See <a href="/pecker/configurations/basic-asset">Asset Configurations</a> to see available options</p>
+            <h5 id="skip">skip</h5>
+            <p>A list of names of assets that the builder should skip.</p>
+            <ul>
+              <li>Required: <code>false</code>
+              </li>
+              <li>Default: <code>[]</code>
+              </li>
+              <li>Possible values: An <code>array</code> of <code>string</code> of asset names defined in <a href="#assets"><code>assets</code></a>.</li>
+            </ul>
+            <h5 id="skiphash">skipHash</h5>
+            <p>A flag that the builder uses to decide whether or not it should create hash for all assets.</p>
+            <p>This value overrides <code>skipHash</code> value for each asset config options.</p>
+            <ul>
+              <li>Required: <code>false</code>
+              </li>
+              <li>Default: <code>null</code>
+              </li>
+              <li>Possible values: <code>null</code> | <code>false</code> | <code>true</code>
+              </li>
+            </ul>
+            <p>If value is <code>null</code>, the builder will use the value of each asset config options.</p>
+            <p>If value is <code>true</code>, the builder will create hash for all assets, regardless of each asset options.</p>
+            <p>If value is <code>false</code>, the builder will not create any hash for any assets, regardless of each asset options.</p>
+            <h5 id="silent">silent</h5>
+            <p>Suppress all logs if build was run from terminal through Pecker CLI.</p>
+            <ul>
+              <li>Required: <code>false</code>
+              </li>
+              <li>Default: <code>false</code>
+              </li>
+              <li>Possible values: <code>boolean</code>
+              </li>
+            </ul>
+            <h4 id="example">Example</h4>
+            <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;my-project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;baseDir&quot;</span><span class="p">:</span> <span class="s2">&quot;/path/to/your/project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;baseUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;/assets&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;destDir&quot;</span><span class="p">:</span> <span class="s2">&quot;./dist&quot;</span><span class="p">,</span>
+  <span class="err">...</span>
+  <span class="nt">&quot;assets&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;file&quot;</span><span class="p">,</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;site.css&quot;</span><span class="p">,</span> <span class="err">...</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;folder&quot;</span><span class="p">,</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;vendor&quot;</span><span class="p">,</span> <span class="err">...</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;browserify&quot;</span><span class="p">,</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;site.js&quot;</span><span class="p">,</span> <span class="err">...</span> <span class="p">},</span>
+    <span class="err">...</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+            </div>
+          </div>
+          <hr/> </div>
+      </div>
+    </div>
+    <footer class="documentation-layout__sticky-footer">
+      <div class="simple-footer">
+        <a href="#">
+          <!--<img src="/pecker/dist/images/icons/1411844934_open-box.png" width="35" height="35" alt="">-->
+        </a>
+        <br/> <a href="https://github.com/sogko/pecker">
+        PECKER
+    </a> was engineered with highest degree of penetrative precision by <a href="https://twitter.com/sogko">@sogko</a> </div>
+    </footer>
+  </div>
+  <script src="/pecker/dist/pecker.js"></script>
+  <script src="/pecker/dist/pecker-loader.js"></script>
+  <script src="/pecker/dist/common.js"></script>
+  <script src="/pecker/dist/site.js"></script>
+  <script>
+    // bootstrap SiteEngine
+    require('site').bootstrap();
+  </script>
+</body>
+
+</html>

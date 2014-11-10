@@ -60,6 +60,8 @@
                   </li>
                   <li class=""><a href="/pecker/usages/installation/">Installation</a>
                   </li>
+                  <li class=""><a href="/pecker/usages/configuring-options/">Configuring options</a>
+                  </li>
                   <li class=""><a href="/pecker/usages/pecker-cli/">Pecker CLI</a>
                   </li>
                   <li class=""><a href="/pecker/usages/local-module/">Local Module</a>
@@ -67,6 +69,36 @@
                   <li class=""><a href="/pecker/usages/gulp-task/">Gulp Task</a>
                   </li>
                   <li class=""><a href="/pecker/usages/client-side/">Client-side</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Asset Types</p>
+                <ul>
+                  <li class=""><a href="/pecker/asset-types/overview/">Overview</a>
+                  </li>
+                  <li class=""><a href="/pecker/asset-types/file-asset/">File asset type</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Configurations</p>
+                <ul>
+                  <li class=""><a href="/pecker/configurations/general/">General configuration</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/asset-types/">Asset types</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/basic-asset/">Asset configuration</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/file-asset/"> &mdash; File asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/folder-asset/"> &mdash; Folder asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/browserify-asset/"> &mdash; Browserify asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/url-asset/"> &mdash; URL asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/package-asset/"> &mdash; Package asset</a>
                   </li>
                 </ul>
               </li>
@@ -90,7 +122,6 @@
                     
                 </h2> </div>
           <div class="content">
-            <p>This section outlines some relevant concepts pertaining to what Pecker is trying to achieve.</p>
             <hr>
             <h4 id="what-is-an-asset?">What is an asset?</h4>
             <p>An asset is simply any type of content that you want to make available on a HTML page in your web application.</p>
@@ -111,10 +142,10 @@
             <p>In all seriousness, every kind of assets can be supported and managed using Pecker framework.</p>
             <p>In Pecker, any kind of asset can fall into at least one of the following Pecker-defined <strong>asset types</strong>:</p>
             <ul>
-              <li>a physical file (i.e. a <strong>file asset</strong>), for eg: JavaScript scripts, CSS/Less/Sass stylesheets</li>
+              <li>a physical file (i.e. a <strong>file asset</strong>), for eg: JavaScript scripts, CSS/LESS/SASS stylesheets</li>
               <li>an entire folder and its content (including sub-folders) (i.e. a <strong>folder asset</strong>)</li>
               <li>a URL referring to an external file asset (i.e. a <strong>URL asset</strong> hosted in a CDN)</li>
-              <li>a CommonJS module that can be browserified (i.e. a <strong>browserify</strong> asset, a special asset type)</li>
+              <li>a <a href="http://browserify.org"><code>browserify</code></a> bundle (i.e. a <strong>browserify</strong> asset, a special asset type)</li>
               <li>an ordered set of assets (i.e. an asset <strong>package</strong>); can also include another asset package (<strong>nested package</strong>)</li>
             </ul>
             <h5 id="related-pages">Related pages</h5>
@@ -135,6 +166,8 @@
     </a> was engineered with highest degree of penetrative precision by <a href="https://twitter.com/sogko">@sogko</a> </div>
     </footer>
   </div>
+  <script src="/pecker/dist/pecker.js"></script>
+  <script src="/pecker/dist/pecker-loader.js"></script>
   <script src="/pecker/dist/common.js"></script>
   <script src="/pecker/dist/site.js"></script>
   <script>

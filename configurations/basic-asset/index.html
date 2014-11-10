@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <meta name="description" content="A modern assets management framework for your web application development">
-  <title>Pecker &mdash; Local Module</title>
+  <title>Pecker &mdash; Asset configuration</title>
   <link rel="shortcut icon" href="/pecker/img/1411844936_196741.ico">
   <link rel="stylesheet" href="/pecker/dist/site.css" /> </head>
 
@@ -64,7 +64,7 @@
                   </li>
                   <li class=""><a href="/pecker/usages/pecker-cli/">Pecker CLI</a>
                   </li>
-                  <li class="active"><a href="/pecker/usages/local-module/">Local Module</a>
+                  <li class=""><a href="/pecker/usages/local-module/">Local Module</a>
                   </li>
                   <li class=""><a href="/pecker/usages/gulp-task/">Gulp Task</a>
                   </li>
@@ -88,7 +88,7 @@
                   </li>
                   <li class=""><a href="/pecker/configurations/asset-types/">Asset types</a>
                   </li>
-                  <li class=""><a href="/pecker/configurations/basic-asset/">Asset configuration</a>
+                  <li class="active"><a href="/pecker/configurations/basic-asset/">Asset configuration</a>
                   </li>
                   <li class=""><a href="/pecker/configurations/file-asset/"> &mdash; File asset</a>
                   </li>
@@ -118,31 +118,55 @@
         </div>
         <div class="content-column">
           <div class="content-header">
-            <h2>Local Module
+            <h2>Asset configuration
                     
                 </h2> </div>
           <div class="content">
             <hr>
-            <h4 id="using-pecker-as-a-local-nodejs-module">Using Pecker as a local NodeJS module</h4>
-            <p>This is useful if you want to <strong>create your own custom build workflow</strong>.</p>
-            <p>You can also <strong>integrate Pecker into your existing build</strong> <em>(in your <code>Gruntfile.js</code> or <code>gulpfile.js</code>, for example)</em>.</p>
-            <p>Here&#39;s an example on how to use <code>Pecker.Builder</code> directly</p>
-            <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Pecker</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;pecker&#39;</span><span class="p">);</span>
-
-<span class="c1">// define Pecker.Builder options</span>
-<span class="kd">var</span> <span class="nx">opts</span> <span class="o">=</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
-<span class="c1">// or require a .js or json file containing configured options</span>
-<span class="c1">// for eg: var opts = require(&#39;./pecker.json&#39;);</span>
-
-<span class="c1">// create Pecker.Builder instance</span>
-<span class="kd">var</span> <span class="nx">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Pecker</span><span class="p">.</span><span class="nx">Builder</span><span class="p">(</span><span class="nx">opts</span><span class="p">);</span>
-
-<span class="c1">// build assets defined in `opts`</span>
-<span class="nx">builder</span><span class="p">.</span><span class="nx">buildAssets</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Build completed&#39;</span><span class="p">);</span>
-<span class="p">);</span></code></pre>
-            </div>
-            <p>Refer to API documentation to explore more in depth.</p>
+            <h5 id="name">name</h5>
+            <p>Unique name to identify your asset.</p>
+            <p>Usually, this would be the filename or folder name of the asset, or a package name.</p>
+            <ul>
+              <li>Required: <code>true</code>
+              </li>
+              <li>Possible values: Any valid JSON key <code>string</code>.</li>
+              <li>Examples: <code>&quot;site.js&quot;</code>, <code>&quot;site.css&quot;</code>, <code>&quot;jquery&quot;</code>.</li>
+              <li>Note: An asset name is expected to be unique within a Pecker configuration. If there are duplicate assets with the same name, only one asset configuration will be used.</li>
+            </ul>
+            <h5 id="type">type</h5>
+            <p>The type of asset.</p>
+            <p>Depending on the asset type, additional options would be required.</p>
+            <ul>
+              <li>Required: <code>true</code>
+              </li>
+              <li>Possible values:
+                <ul>
+                  <li><code>&quot;file&quot;</code>
+                  </li>
+                  <li><code>&quot;folder&quot;</code>
+                  </li>
+                  <li><code>&quot;browserify&quot;</code>
+                  </li>
+                  <li><code>&quot;package&quot;</code>
+                  </li>
+                  <li><code>&quot;url&quot;</code>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <h4 id="additional-asset-type-specific-configurations">Additional asset type-specific configurations</h4>
+            <ul>
+              <li><a href="/pecker/configurations/file-asset"><code>file</code></a>
+              </li>
+              <li><a href="/pecker/configurations/folder-asset"><code>folder</code></a>
+              </li>
+              <li><a href="/pecker/configurations/browserify-asset"><code>browserify</code></a>
+              </li>
+              <li><a href="/pecker/configurations/package-asset"><code>package</code></a>
+              </li>
+              <li><a href="/pecker/configurations/url-asset"><code>url</code></a>
+              </li>
+            </ul>
           </div>
           <hr/> </div>
       </div>

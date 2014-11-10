@@ -60,6 +60,8 @@
                   </li>
                   <li class=""><a href="/pecker/usages/installation/">Installation</a>
                   </li>
+                  <li class=""><a href="/pecker/usages/configuring-options/">Configuring options</a>
+                  </li>
                   <li class=""><a href="/pecker/usages/pecker-cli/">Pecker CLI</a>
                   </li>
                   <li class=""><a href="/pecker/usages/local-module/">Local Module</a>
@@ -67,6 +69,36 @@
                   <li class=""><a href="/pecker/usages/gulp-task/">Gulp Task</a>
                   </li>
                   <li class=""><a href="/pecker/usages/client-side/">Client-side</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Asset Types</p>
+                <ul>
+                  <li class=""><a href="/pecker/asset-types/overview/">Overview</a>
+                  </li>
+                  <li class=""><a href="/pecker/asset-types/file-asset/">File asset type</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Configurations</p>
+                <ul>
+                  <li class=""><a href="/pecker/configurations/general/">General configuration</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/asset-types/">Asset types</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/basic-asset/">Asset configuration</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/file-asset/"> &mdash; File asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/folder-asset/"> &mdash; Folder asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/browserify-asset/"> &mdash; Browserify asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/url-asset/"> &mdash; URL asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/package-asset/"> &mdash; Package asset</a>
                   </li>
                 </ul>
               </li>
@@ -91,19 +123,17 @@
                 </h2> </div>
           <div class="content">
             <hr>
-            <h3 id="pecker-is-not-a-build-tool">Pecker is not a build tool</h3>
+            <h4 id="pecker-is-not-a-build-tool">Pecker is not a build tool</h4>
             <p>Well, for one thing, Pecker is <strong>not</strong> a build tool.</p>
             <p>Pecker is not looking to do what Grunt, Gulp or Broccoli head out to do.</p>
             <p>These build tools do their job and they do it well.</p>
-            <h3 id="it-is-a-framework">It is a framework</h3>
+            <h4 id="it-is-a-framework">It is a framework</h4>
             <p>Pecker is a <strong>framework that aims to make your assets management easier</strong>, using multitude of tools behind the scene to achieve that.</p>
             <p>In fact, currently Pecker is using Gulp as a build tool as part of the framework. It was selected because right now, it seems to fit most of the use-cases we needed.</p>
-            <h3 id="why-a-framework?">Why a framework?</h3>
+            <h4 id="why-a-framework?">Why a framework?</h4>
             <p>The beauty of this is that <strong>we help to figure out the best tools and practices that you might need</strong>, specifically in assets management, free-ing you with making other choices related to other parts of your application development.</p>
             <p>We also try to ensure that Pecker would play nice with other web technologies. At the end of the day, we want to help you achieve productivity, not hinder it.</p>
-            <p>This means that you can use Pecker alongside/integrated into your own build pipeline, letting <strong>Pecker handle assets management</strong> and letting your build tool preparing your application. </p>
-            <p><em>(Heck, if Broccoli turns out to be a better build tool, Pecker might use it to some capacity.)</em>
-            </p>
+            <p>This means that you can use Pecker alongside/integrated into your own build pipeline, letting <strong>Pecker handle assets management</strong> and letting your build tool do what they do best for your application.</p>
           </div>
           <hr/> </div>
       </div>
@@ -118,6 +148,8 @@
     </a> was engineered with highest degree of penetrative precision by <a href="https://twitter.com/sogko">@sogko</a> </div>
     </footer>
   </div>
+  <script src="/pecker/dist/pecker.js"></script>
+  <script src="/pecker/dist/pecker-loader.js"></script>
   <script src="/pecker/dist/common.js"></script>
   <script src="/pecker/dist/site.js"></script>
   <script>

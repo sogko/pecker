@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <meta name="description" content="A modern assets management framework for your web application development">
-  <title>Pecker &mdash; Local Module</title>
+  <title>Pecker &mdash; Configuring options</title>
   <link rel="shortcut icon" href="/pecker/img/1411844936_196741.ico">
   <link rel="stylesheet" href="/pecker/dist/site.css" /> </head>
 
@@ -60,11 +60,11 @@
                   </li>
                   <li class=""><a href="/pecker/usages/installation/">Installation</a>
                   </li>
-                  <li class=""><a href="/pecker/usages/configuring-options/">Configuring options</a>
+                  <li class="active"><a href="/pecker/usages/configuring-options/">Configuring options</a>
                   </li>
                   <li class=""><a href="/pecker/usages/pecker-cli/">Pecker CLI</a>
                   </li>
-                  <li class="active"><a href="/pecker/usages/local-module/">Local Module</a>
+                  <li class=""><a href="/pecker/usages/local-module/">Local Module</a>
                   </li>
                   <li class=""><a href="/pecker/usages/gulp-task/">Gulp Task</a>
                   </li>
@@ -118,31 +118,59 @@
         </div>
         <div class="content-column">
           <div class="content-header">
-            <h2>Local Module
+            <h2>Configuring options
                     
                 </h2> </div>
           <div class="content">
             <hr>
-            <h4 id="using-pecker-as-a-local-nodejs-module">Using Pecker as a local NodeJS module</h4>
-            <p>This is useful if you want to <strong>create your own custom build workflow</strong>.</p>
-            <p>You can also <strong>integrate Pecker into your existing build</strong> <em>(in your <code>Gruntfile.js</code> or <code>gulpfile.js</code>, for example)</em>.</p>
-            <p>Here&#39;s an example on how to use <code>Pecker.Builder</code> directly</p>
+            <p>You can configure the options for your Pecker-managed project in two (2) ways:</p>
+            <ul>
+              <li>as a JSON object in <code>pecker.json</code> for Pecker CLI, or</li>
+              <li>as a JavaScript object passed into Pecker.Builder constructor.</li>
+            </ul>
+            <h4 id="using-pecker-options-in-pecker.json">Using Pecker options in <code>pecker.json</code></h4>
+            <p>Here&#39;s how you would pass in your Pecker options if you are using the <strong>Pecker CLI</strong>.</p>
+            <ol>
+              <li>Open your terminal.</li>
+              <li>Run <code>pecker init</code> in your project folder</li>
+            </ol>
+            <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd</span> /path/to/your/project
+<span class="nv">$ </span>pecker init <span class="c"># interactively create `pecker.json`</span>
+<span class="nv">$ </span>pecker build <span class="c"># build assets</span></code></pre>
+            </div>
+            <p>Alternatively, you can manually create a <code>pecker.json</code> file in your project folder</p>
+            <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;my-project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;baseUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;/path/to/your/project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;destDir&quot;</span><span class="p">:</span> <span class="s2">&quot;./dist&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;assets&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;file&quot;</span><span class="p">,</span>  <span class="err">...</span> <span class="p">},</span>
+    <span class="err">...</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+            </div>
+            <h4 id="using-pecker-options-as-a-javascript-object-for-pecker.builder">Using Pecker options as a JavaScript object for Pecker.Builder</h4>
+            <p>Here&#39;s how you would pass in your Pecker options if you are using the <strong>Pecker.Builder</strong> directly in a NodeJS script.</p>
             <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Pecker</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;pecker&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">opts</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;pecker-docs&quot;</span><span class="p">,</span>
+    <span class="nx">baseUrl</span><span class="o">:</span> <span class="s2">&quot;/pecker/dist&quot;</span><span class="p">,</span>
+    <span class="nx">destDir</span><span class="o">:</span> <span class="s2">&quot;./dist&quot;</span><span class="p">,</span>
+    <span class="nx">assets</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;file&quot;</span><span class="p">,</span>  <span class="p">...</span> <span class="p">},</span>
+        <span class="p">...</span>
+    <span class="p">]</span>
+<span class="p">};</span>
 
-<span class="c1">// define Pecker.Builder options</span>
-<span class="kd">var</span> <span class="nx">opts</span> <span class="o">=</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
-<span class="c1">// or require a .js or json file containing configured options</span>
-<span class="c1">// for eg: var opts = require(&#39;./pecker.json&#39;);</span>
-
-<span class="c1">// create Pecker.Builder instance</span>
+<span class="c1">// create an instance of Pecker Builder with options</span>
 <span class="kd">var</span> <span class="nx">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Pecker</span><span class="p">.</span><span class="nx">Builder</span><span class="p">(</span><span class="nx">opts</span><span class="p">);</span>
 
-<span class="c1">// build assets defined in `opts`</span>
+<span class="c1">// build assets</span>
 <span class="nx">builder</span><span class="p">.</span><span class="nx">buildAssets</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Build completed&#39;</span><span class="p">);</span>
-<span class="p">);</span></code></pre>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Done!&#39;</span><span class="p">);</span>
+<span class="p">});</span></code></pre>
             </div>
-            <p>Refer to API documentation to explore more in depth.</p>
+            <p>See <a href="/pecker/configurations/general">Configurations</a> to see available options</p>
           </div>
           <hr/> </div>
       </div>

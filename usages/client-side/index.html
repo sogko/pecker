@@ -60,6 +60,8 @@
                   </li>
                   <li class=""><a href="/pecker/usages/installation/">Installation</a>
                   </li>
+                  <li class=""><a href="/pecker/usages/configuring-options/">Configuring options</a>
+                  </li>
                   <li class=""><a href="/pecker/usages/pecker-cli/">Pecker CLI</a>
                   </li>
                   <li class=""><a href="/pecker/usages/local-module/">Local Module</a>
@@ -67,6 +69,36 @@
                   <li class=""><a href="/pecker/usages/gulp-task/">Gulp Task</a>
                   </li>
                   <li class="active"><a href="/pecker/usages/client-side/">Client-side</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Asset Types</p>
+                <ul>
+                  <li class=""><a href="/pecker/asset-types/overview/">Overview</a>
+                  </li>
+                  <li class=""><a href="/pecker/asset-types/file-asset/">File asset type</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Configurations</p>
+                <ul>
+                  <li class=""><a href="/pecker/configurations/general/">General configuration</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/asset-types/">Asset types</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/basic-asset/">Asset configuration</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/file-asset/"> &mdash; File asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/folder-asset/"> &mdash; Folder asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/browserify-asset/"> &mdash; Browserify asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/url-asset/"> &mdash; URL asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/package-asset/"> &mdash; Package asset</a>
                   </li>
                 </ul>
               </li>
@@ -90,32 +122,91 @@
                     
                 </h2> </div>
           <div class="content">
+            <hr>
             <h4 id="using-pecker-as-a-client-side-script-in-browser">Using Pecker as a client-side script in browser</h4>
-            <p>Using Pecker in your Gulp build workflow is as simple as using the Pecker module directly in your <code>gulpfile.js</code> and defining a gulp task.</p>
-            <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// gulpfile.js</span>
+            <p>Follow the following steps to get started using Pecker as a client-side script in the browser.</p>
+            <p>Note: Due to limitations of the browser, certain APIs are not available, such as Pecker.Builder APIs. Refer to the Reference to find out more.</p>
+            <h5 id="1.-build-your-assets">1. Build your assets</h5>
+            <p>To build your assets, do either one of the following:</p>
+            <ul>
+              <li>If you are using Pecker CLI, run <code>pecker build</code>.</li>
+              <li>If you are using Pecker module in your script, call <code>Pecker.Builder.buildAssets()</code> method.</li>
+            </ul>
+            <h5 id="2.-load-generated-client-side-pecker-script-files">2. Load generated client-side Pecker script files</h5>
+            <p>As part of the build, the Pecker.Builder will automatically generate two JavaScript files in your output folder specified in <a href="/pecker/configurations/general/#destdir">destDir</a>:</p>
+            <ul>
+              <li><code>pecker.js</code>: main script file that exposes Pecker API in your browser.</li>
+              <li><code>pecker-loader.js</code>: a script that initialized the global Pecker object.</li>
+            </ul>
+            <p>These files will be added to your <code>manifest.json</code> file as well.</p>
+            <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- assuming that both JS files are in `dist/` path --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;dist/pecker.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;dist/pecker-loader.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre>
+            </div>
+            <p>Note: the order that the scripts are loaded matters.</p>
+            <h5 id="3.-use-pecker-api-directly-in-your-client-side-scripts">3. Use Pecker API directly in your client-side scripts</h5>
+            <p>After loading the client-side Pecker script files, you can refer to the global <code>Pecker</code> object instance and access Pecker API directly.</p>
+            <p>For example:</p>
+            <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script&gt;</span>
+    <span class="c1">// display Pecker version</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Pecker version: &#39;</span> <span class="o">+</span> <span class="nx">Pecker</span><span class="p">.</span><span class="nx">version</span><span class="p">);</span>
+    <span class="c1">// -&gt; &quot;Pecker version: 1.0.0&quot;</span>
 
-<span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">Pecker</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;pecker&#39;</span><span class="p">);</span>
-
-<span class="c1">// define gulp task using Pecker.Builder</span>
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;build&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="p">{</span>
-
-    <span class="c1">// define Pecker.Builder options</span>
-    <span class="kd">var</span> <span class="nx">opts</span> <span class="o">=</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
-    <span class="c1">// or require a .js or json file containing configured options</span>
-    <span class="c1">// for eg: var opts = require(&#39;./pecker.json&#39;);</span>
-
-    <span class="c1">// create Pecker.Builder instance</span>
-    <span class="kd">var</span> <span class="nx">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Pecker</span><span class="p">.</span><span class="nx">Builder</span><span class="p">(</span><span class="nx">opts</span><span class="p">);</span>
-
-    <span class="c1">// build assets defined in `opts`</span>
-    <span class="nx">builder</span><span class="p">.</span><span class="nx">buildAssets</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Build completed&#39;</span><span class="p">);</span>
-        <span class="nx">done</span><span class="p">();</span>
-    <span class="p">});</span> 
-<span class="p">});</span></code></pre>
+    <span class="c1">// display `pecker.js` url path</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;pecker.js: &#39;</span> <span class="o">+</span> <span class="nx">Pecker</span><span class="p">.</span><span class="nx">Assets</span><span class="p">.</span><span class="nx">getUrl</span><span class="p">(</span><span class="s1">&#39;pecker.js&#39;</span><span class="p">));</span>
+    <span class="c1">// -&gt; &quot;pecker.js: dist/pecker.js&quot;</span>
+<span class="nt">&lt;/script&gt;</span></code></pre>
             </div>
             <p>Refer to API documentation to explore more in depth.</p>
+            <h5 id="tips:-automatically-include-pecker-scripts-using-server-side-templates.">Tips: Automatically include Pecker scripts using server-side templates.</h5>
+            <p>You can automatically include Pecker scripts using server-side templates.</p>
+            <p>The following example uses:</p>
+            <ul>
+              <li><code>Handlebars</code> for the template engine.</li>
+              <li><code>jsonfile</code> to read our <code>manifest.json</code> file.</li>
+            </ul>
+            <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Pecker</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;pecker&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Handlebars</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;handlebars&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">jf</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;jsonfile&#39;</span><span class="p">);</span>
+
+<span class="c1">// register package asset tag helper, `PeckerAsset`</span>
+<span class="nx">Handlebars</span><span class="p">.</span><span class="nx">registerHelper</span><span class="p">(</span><span class="s1">&#39;PeckerAsset&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// read `manifest.json` generated after running `pecker build`</span>
+  <span class="kd">var</span> <span class="nx">manifest</span> <span class="o">=</span> <span class="nx">jf</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s1">&#39;./dist/manifest.json&#39;</span><span class="p">);</span>
+
+  <span class="c1">// create Pecker.Assets instance with generated `manifest.json`</span>
+  <span class="kd">var</span> <span class="nx">peckerAssets</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Pecker</span><span class="p">.</span><span class="nx">Assets</span><span class="p">(</span><span class="nx">manifest</span><span class="p">);</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nx">Handlebars</span><span class="p">.</span><span class="nx">SafeString</span><span class="p">(</span>
+    <span class="c1">// given the asset name and other options, construct the asset HTML string</span>
+    <span class="nx">peckerAssets</span><span class="p">.</span><span class="nx">constructAssetHTML</span><span class="p">(</span><span class="nx">options</span><span class="p">.</span><span class="nx">hash</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">options</span><span class="p">.</span><span class="nx">hash</span><span class="p">)</span>
+  <span class="p">);</span>
+<span class="p">});</span></code></pre>
+            </div>
+            <p>This is an example of a template file.</p>
+            <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="c">&lt;!-- load scripts from Pecker asset package --&gt;</span>
+{{ PeckerAsset name=&quot;Pecker&quot; type=&quot;script&quot; }}
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body&gt;</span>
+  <span class="c">&lt;!-- insert body content here --&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre>
+            </div>
+            <p>This is an example output after running the above template through Handlebars</p>
+            <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="c">&lt;!-- load scripts from Pecker asset package --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/dist/pecker.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/dist/pecker-loader.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body&gt;</span>
+  <span class="c">&lt;!-- insert body content here --&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre>
+            </div>
           </div>
           <hr/> </div>
       </div>
@@ -130,6 +221,8 @@
     </a> was engineered with highest degree of penetrative precision by <a href="https://twitter.com/sogko">@sogko</a> </div>
     </footer>
   </div>
+  <script src="/pecker/dist/pecker.js"></script>
+  <script src="/pecker/dist/pecker-loader.js"></script>
   <script src="/pecker/dist/common.js"></script>
   <script src="/pecker/dist/site.js"></script>
   <script>

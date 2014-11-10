@@ -60,6 +60,8 @@
                   </li>
                   <li class=""><a href="/pecker/usages/installation/">Installation</a>
                   </li>
+                  <li class=""><a href="/pecker/usages/configuring-options/">Configuring options</a>
+                  </li>
                   <li class="active"><a href="/pecker/usages/pecker-cli/">Pecker CLI</a>
                   </li>
                   <li class=""><a href="/pecker/usages/local-module/">Local Module</a>
@@ -67,6 +69,36 @@
                   <li class=""><a href="/pecker/usages/gulp-task/">Gulp Task</a>
                   </li>
                   <li class=""><a href="/pecker/usages/client-side/">Client-side</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Asset Types</p>
+                <ul>
+                  <li class=""><a href="/pecker/asset-types/overview/">Overview</a>
+                  </li>
+                  <li class=""><a href="/pecker/asset-types/file-asset/">File asset type</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Configurations</p>
+                <ul>
+                  <li class=""><a href="/pecker/configurations/general/">General configuration</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/asset-types/">Asset types</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/basic-asset/">Asset configuration</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/file-asset/"> &mdash; File asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/folder-asset/"> &mdash; Folder asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/browserify-asset/"> &mdash; Browserify asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/url-asset/"> &mdash; URL asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/package-asset/"> &mdash; Package asset</a>
                   </li>
                 </ul>
               </li>
@@ -90,12 +122,34 @@
                     
                 </h2> </div>
           <div class="content">
+            <hr>
             <h4 id="using-pecker-as-a-command-line-program">Using Pecker as a command-line program</h4>
-            <ul>
-              <li>need to install as a global module</li>
-              <li>can run Pecker CLI as <code>pecker</code> in your terminal</li>
-              <li>talk about pecker.json</li>
-            </ul>
+            <p>The <code>pecker</code> command-line interface (CLI) comes with a series of options.</p>
+            <p>Use <code>pecker help</code> from your terminal to show help information of available options.</p>
+            <hr>
+            <h3 id="usage">Usage</h3>
+            <div class="highlight"><pre><code class="language-text" data-lang="text">pecker &lt;action&gt; [&lt;args&gt;] [&lt;options&gt;]
+</code></pre>
+            </div>
+            <hr>
+            <h3 id="actions">Actions</h3>
+            <h6 id="add">add</h6>
+            <p>Interactively add a new asset definition in <code>pecker.json</code>.</p>
+            <h6 id="build">build</h6>
+            <p>Build all assets defined in <code>pecker.json</code>.</p>
+            <h6 id="help">help</h6>
+            <p>Display help information about <strong>Pecker</strong>.</p>
+            <h6 id="init">init</h6>
+            <p>Interactively create a <code>pecker.json</code>.</p>
+            <h6 id="watch">watch</h6>
+            <p>Watch all assets defined in <code>pecker.json</code> and build on changes.</p>
+            <h3 id="options">Options</h3>
+            <h6 id="-c,---config">-c, --config</h6>
+            <p>Path to Pecker config file.</p>
+            <p>Default: Current directory where <code>pecker</code> was run from.</p>
+            <h6 id="-s,---silent">-s, --silent</h6>
+            <p>Suppress all log messages (including error messages).</p>
+            <p>Default: <code>false</code>.</p>
           </div>
           <hr/> </div>
       </div>
@@ -110,6 +164,8 @@
     </a> was engineered with highest degree of penetrative precision by <a href="https://twitter.com/sogko">@sogko</a> </div>
     </footer>
   </div>
+  <script src="/pecker/dist/pecker.js"></script>
+  <script src="/pecker/dist/pecker-loader.js"></script>
   <script src="/pecker/dist/common.js"></script>
   <script src="/pecker/dist/site.js"></script>
   <script>

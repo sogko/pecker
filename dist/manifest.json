@@ -25,15 +25,15 @@
       "url": "/pecker/dist/site.js",
       "path": "/Users/hafiz/dev/pecker-docs/dist/site.js"
     },
-    "fonts": {
-      "type": "folder",
-      "url": "/pecker/dist/fonts",
-      "path": "/Users/hafiz/dev/pecker-docs/dist/fonts"
-    },
     "images": {
       "type": "folder",
       "url": "/pecker/dist/images",
       "path": "/Users/hafiz/dev/pecker-docs/dist/images"
+    },
+    "fonts": {
+      "type": "folder",
+      "url": "/pecker/dist/fonts",
+      "path": "/Users/hafiz/dev/pecker-docs/dist/fonts"
     },
     "Pecker": {
       "type": "package",

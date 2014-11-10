@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="description" content="A modern assets management framework for your web application development">
+  <title>Pecker &mdash; Browserify asset</title>
+  <link rel="shortcut icon" href="/pecker/img/1411844936_196741.ico">
+  <link rel="stylesheet" href="/pecker/dist/site.css" /> </head>
+
+<body>
+  <div class="default-layout">
+    <div class="documentation-layout" data-block-name="layouts/documentation" data-block-type="runnable">
+      <div class="header">
+        <div class="documentation-header">
+          <div class="documentation-header__menu-button">
+            <div class="toc__menu-button">
+              <div class="collapsible-menu-button" data-block-name="blocks/buttons/collapsible-menu-button" data-block-type="component">
+                <button type="button">&#9776; PECKER</button>
+              </div>
+            </div>
+          </div>
+          <div class="documentation-header__content"> <a class="brand-simple" href="/pecker/">PECKER</a> &mdash; A modern assets management framework for your web application development </div>
+        </div>
+      </div>
+      <div class="content-row">
+        <div class="toc">
+          <nav class="toc__menu">
+            <ul class="toc__menu-items">
+              <li>
+                <p>Pecker</p>
+                <ul>
+                  <li class=""><a class="nav-list-group-item-link" href="/pecker/">Home </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Getting Started</p>
+                <ul>
+                  <li class=""><a href="/pecker/getting-started/overview/">Overview</a>
+                  </li>
+                  <li class=""><a href="/pecker/getting-started/concepts/">Concepts</a>
+                  </li>
+                  <li class=""><a href="/pecker/getting-started/how-is-pecker-different-from-other-build-tools/">How is Pecker different from other build tools?</a>
+                  </li>
+                  <li class=""><a href="/pecker/getting-started/why-would-i-need-a-framework/">Why would I need a framework?</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Usages</p>
+                <ul>
+                  <li class=""><a href="/pecker/usages/overview/">Overview</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/installation/">Installation</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/configuring-options/">Configuring options</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/pecker-cli/">Pecker CLI</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/local-module/">Local Module</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/gulp-task/">Gulp Task</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/client-side/">Client-side</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Asset Types</p>
+                <ul>
+                  <li class=""><a href="/pecker/asset-types/overview/">Overview</a>
+                  </li>
+                  <li class=""><a href="/pecker/asset-types/file-asset/">File asset type</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Configurations</p>
+                <ul>
+                  <li class=""><a href="/pecker/configurations/general/">General configuration</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/asset-types/">Asset types</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/basic-asset/">Asset configuration</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/file-asset/"> &mdash; File asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/folder-asset/"> &mdash; Folder asset</a>
+                  </li>
+                  <li class="active"><a href="/pecker/configurations/browserify-asset/"> &mdash; Browserify asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/url-asset/"> &mdash; URL asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/package-asset/"> &mdash; Package asset</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Developers</p>
+                <ul>
+                  <li class=""><a href="/pecker/developers/contributing/">Contributing</a>
+                  </li>
+                  <li class=""><a href="/pecker/developers/changelog/">Changelog</a>
+                  </li>
+                  <li class=""><a href="/pecker/developers/license/">License</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="content-column">
+          <div class="content-header">
+            <h2>Browserify asset
+                    
+                </h2> </div>
+          <div class="content">
+            <hr>
+            <h5 id="entries">entries</h5>
+            <p>An array of file paths or glob patterns of main entry <code>files</code> to be added to the <code>browserify</code> bundle.</p>
+            <p>Refer to <code>browserify</code> API documentation on <a href="https://github.com/substack/node-browserify#var-b--browserifyfiles-or-opts">main entry files</a>.</p>
+            <p>Both the paths and patterns can be absolute paths or relative to the defined <a href="/pecker/configurations/general/#basedir">baseDir</a> value.</p>
+            <ul>
+              <li>Required: <code>true</code>
+              </li>
+              <li>Possible values: An array of file paths or glob patterns <code>strings</code>.</li>
+              <li>Examples: <code>&quot;./src/script.js&quot;</code>, <code>&quot;./src/**/*.js&quot;</code>.</li>
+            </ul>
+            <h5 id="require">require</h5>
+            <p>An array of <code>require</code> configuration <a href="https://github.com/substack/node-browserify#brequirefile-opts">to make a <code>module</code> available from the <code>browserify</code> bundle</a>.</p>
+            <p>A <code>require</code> configuration object should have the following properties:</p>
+            <ul>
+              <li><code>type</code>
+              </li>
+              <li><code>name</code>
+              </li>
+              <li><code>expose</code>
+              </li>
+              <li><code>location</code> <em>(optional)</em>
+              </li>
+            </ul>
+            <hr>
+            <p><strong>type</strong>: Type of required module.
+              <br/> The type of the required module helps to tell Pecker.Builder where to look for the location of the module.</p>
+            <ul>
+              <li>Default: <code>&quot;module&quot;</code>.</li>
+              <li>Possible values:
+                <ul>
+                  <li><code>&quot;module&quot;</code>: A vanilla CommonJS/NodeJS exported module.</li>
+                  <li><code>&quot;npm&quot;</code>: An <a href="https://www.npmjs.org">NPM</a>-managed module.</li>
+                  <li><code>&quot;bower&quot;</code>: A <a href="http://bower.io">Bower</a>-managed module.</li>
+                </ul>
+              </li>
+            </ul>
+            <p>If the type of the module is <code>npm</code> or <code>bower</code>, Pecker.Builder will automatically resolve the location of the module using <a href="https://github.com/substack/node-resolve"><code>resolve</code></a> or <a href="https://github.com/eugeneware/bower-resolve"><code>bower-resolve</code></a>,
+              respectively.</p>
+            <p>Learn more about <a href="#location"><code>location</code> property</a>
+            </p>
+            <hr>
+            <p><strong>name</strong>: Name of required module.
+              <br/> Example: <code>&quot;lodash&quot;</code>, <code>&quot;jquery&quot;</code>.</p>
+            <p>The name will be used to resolve the location of the module.</p>
+            <hr>
+            <p><strong>expose</strong>: Exposed name of the required module.
+              <br/> This will be the name that will be used to resolve a <code>require()</code>.</p>
+            <p>If <code>expose</code> property is not set, it will be the same as <code>name</code> property.</p>
+            <ul>
+              <li>Default: the value of <code>name</code> property.</li>
+              <li>Possible values: Any valid <code>string</code>.</li>
+            </ul>
+            <hr>
+            <div id="location"></div>
+            <p><strong>location</strong>: Path of the required module <em>(optional)</em>
+            </p>
+            <p>If the <code>type</code> is set to <code>module</code> and <code>location</code> property is not set, Pecker.Builder will assume that the module <code>name</code> is the path of the module, relative to <a href="/pecker/configurations/general/#basedir">baseDir</a>              value.</p>
+            <p>If the <code>type</code> is <code>npm</code> or <code>bower</code>, Pecker.Builder will automatically try to resolve the location of the module using <a href="https://github.com/substack/node-resolve"><code>resolve</code></a> or <a href="https://github.com/eugeneware/bower-resolve"><code>bower-resolve</code></a>,
+              respectively.</p>
+            <p>You can set the <code>location</code> property to override the resolved path.</p>
+            <p>The path can be an absolute path or relative to the defined <a href="/pecker/configurations/general/#basedir">baseDir</a> value.</p>
+            <hr>
+            <h5 id="external">external</h5>
+            <p>An array of module names to be excluded from the <code>browserify</code> bundle.</p>
+            <p>Refer to <code>browserify</code> API documentation on <a href="https://github.com/substack/node-browserify#bexternalfile"><code>b.external()</code></a>.</p>
+            <ul>
+              <li>Required: <code>false</code>
+              </li>
+              <li>Default: <code>[]</code>
+              </li>
+              <li>Possible values: An array of <code>string</code>.</li>
+            </ul>
+            <h5 id="transform">transform</h5>
+            <p>An array of transform values that is accepted by <code>browserify</code>.</p>
+            <p>Refer to <code>browserify</code> API documentation on <a href="https://github.com/substack/node-browserify#btransformtr-opts"><code>b.transform()</code></a>.</p>
+            <ul>
+              <li>Required: <code>false</code>
+              </li>
+              <li>Default: <code>[]</code>
+              </li>
+              <li>Possible values: Valid <code>browserify</code> transform values.</li>
+            </ul>
+            <h5 id="watch">watch</h5>
+            <p>An array of file paths or glob patterns for Pecker to watch for changes.</p>
+            <p>Both the paths and patterns can be absolute paths or relative to the defined <a href="/pecker/configurations/general/#basedir">baseDir</a> value.</p>
+            <ul>
+              <li>Required: <code>true</code>
+              </li>
+              <li>Possible values: An array of file paths or glob patterns <code>strings</code>.</li>
+              <li>Examples: <code>&quot;./src/script.js&quot;</code>, <code>&quot;./src/**/*.js&quot;</code>.</li>
+            </ul>
+            <h5 id="skiphash">skipHash</h5>
+            <p>A boolean flag to tell Pecker.Builder whether to generate unique content hash for this asset.</p>
+            <ul>
+              <li>Required: <code>false</code>
+              </li>
+              <li>Default: <code>false</code>
+              </li>
+              <li>Possible values: <code>true</code> | <code>false</code>
+              </li>
+              <li>Note: This value can be overridden by the non-null global <a href="/pecker/configurations/general/#skiphash"><code>skipHash</code></a> value.</li>
+            </ul>
+            <hr>
+            <h4 id="example-browserify-asset-configuration">Example <code>browserify</code> asset configuration</h4>
+            <p>Transform all <code>*.scss</code> SASS files from a folder and produce a single <code>site.css</code> file asset</p>
+            <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;my-project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;baseDir&quot;</span><span class="p">:</span> <span class="s2">&quot;/path/to/your/project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;baseUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;/assets&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;destDir&quot;</span><span class="p">:</span> <span class="s2">&quot;./dist&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;assets&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;browserify&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;site.js&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;entries&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;./src/site.js&quot;</span><span class="p">],</span>
+      <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bower&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;lodash&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;npm&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;path&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;module&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myModule&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;module&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myOtherModule&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;./components/myOtherModule.js&quot;</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;external&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;jquery&quot;</span><span class="p">],</span>
+      <span class="nt">&quot;watch&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;./src/**/*.js&quot;</span><span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+            </div>
+            <ul>
+              <li><strong>name</strong>: <code>site.css</code> is the asset name and also will be the filename of the generated output file.</li>
+              <li><strong>entries</strong>: <code>./src/site.js</code> will be the entry file for the <code>browserify</code> bundle.</li>
+              <li>
+                <p><strong>require</strong>: Include the following modules in the output bundle:</p>
+                <ul>
+                  <li><code>lodash</code>: A Bower-managed module, would be in <code>bower_components</code> by default.</li>
+                  <li><code>path</code>: A built-in NodeJS module. (Yes, we can do that).</li>
+                  <li><code>myModule</code>: A custom module writting in CommonJS/NodeJS format (exported module). Since the location of the module is not specified, it&#39;s expected to be found in either:
+                    <ul>
+                      <li><code>/path/to/your/project/myModule.js</code>, or</li>
+                      <li><code>/path/to/your/project/myModule/index.js</code>.</li>
+                    </ul>
+                  </li>
+                  <li><code>myOtherModule</code>: Another custom module. The location of the module has been specified as <code>/path/to/your/project/components/myOtherModule.js</code>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p><strong>external</strong>: <code>jquery</code> has been specified as an <strong>external require</strong>.</p>
+              </li>
+              <li>
+                <p><strong>watch</strong>: Tell Pecker.Builder to watch all <code>*.js</code> files in <code>src</code> folder recursively.</p>
+              </li>
+            </ul>
+          </div>
+          <hr/> </div>
+      </div>
+    </div>
+    <footer class="documentation-layout__sticky-footer">
+      <div class="simple-footer">
+        <a href="#">
+          <!--<img src="/pecker/dist/images/icons/1411844934_open-box.png" width="35" height="35" alt="">-->
+        </a>
+        <br/> <a href="https://github.com/sogko/pecker">
+        PECKER
+    </a> was engineered with highest degree of penetrative precision by <a href="https://twitter.com/sogko">@sogko</a> </div>
+    </footer>
+  </div>
+  <script src="/pecker/dist/pecker.js"></script>
+  <script src="/pecker/dist/pecker-loader.js"></script>
+  <script src="/pecker/dist/common.js"></script>
+  <script src="/pecker/dist/site.js"></script>
+  <script>
+    // bootstrap SiteEngine
+    require('site').bootstrap();
+  </script>
+</body>
+
+</html>

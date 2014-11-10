@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <meta name="description" content="A modern assets management framework for your web application development">
-  <title>Pecker &mdash; Local Module</title>
+  <title>Pecker &mdash; URL asset</title>
   <link rel="shortcut icon" href="/pecker/img/1411844936_196741.ico">
   <link rel="stylesheet" href="/pecker/dist/site.css" /> </head>
 
@@ -64,7 +64,7 @@
                   </li>
                   <li class=""><a href="/pecker/usages/pecker-cli/">Pecker CLI</a>
                   </li>
-                  <li class="active"><a href="/pecker/usages/local-module/">Local Module</a>
+                  <li class=""><a href="/pecker/usages/local-module/">Local Module</a>
                   </li>
                   <li class=""><a href="/pecker/usages/gulp-task/">Gulp Task</a>
                   </li>
@@ -96,7 +96,7 @@
                   </li>
                   <li class=""><a href="/pecker/configurations/browserify-asset/"> &mdash; Browserify asset</a>
                   </li>
-                  <li class=""><a href="/pecker/configurations/url-asset/"> &mdash; URL asset</a>
+                  <li class="active"><a href="/pecker/configurations/url-asset/"> &mdash; URL asset</a>
                   </li>
                   <li class=""><a href="/pecker/configurations/package-asset/"> &mdash; Package asset</a>
                   </li>
@@ -118,31 +118,39 @@
         </div>
         <div class="content-column">
           <div class="content-header">
-            <h2>Local Module
+            <h2>URL asset
                     
                 </h2> </div>
           <div class="content">
             <hr>
-            <h4 id="using-pecker-as-a-local-nodejs-module">Using Pecker as a local NodeJS module</h4>
-            <p>This is useful if you want to <strong>create your own custom build workflow</strong>.</p>
-            <p>You can also <strong>integrate Pecker into your existing build</strong> <em>(in your <code>Gruntfile.js</code> or <code>gulpfile.js</code>, for example)</em>.</p>
-            <p>Here&#39;s an example on how to use <code>Pecker.Builder</code> directly</p>
-            <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Pecker</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;pecker&#39;</span><span class="p">);</span>
-
-<span class="c1">// define Pecker.Builder options</span>
-<span class="kd">var</span> <span class="nx">opts</span> <span class="o">=</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
-<span class="c1">// or require a .js or json file containing configured options</span>
-<span class="c1">// for eg: var opts = require(&#39;./pecker.json&#39;);</span>
-
-<span class="c1">// create Pecker.Builder instance</span>
-<span class="kd">var</span> <span class="nx">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Pecker</span><span class="p">.</span><span class="nx">Builder</span><span class="p">(</span><span class="nx">opts</span><span class="p">);</span>
-
-<span class="c1">// build assets defined in `opts`</span>
-<span class="nx">builder</span><span class="p">.</span><span class="nx">buildAssets</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Build completed&#39;</span><span class="p">);</span>
-<span class="p">);</span></code></pre>
+            <h5 id="url">url</h5>
+            <p>The URL that points to the location of the asset.</p>
+            <p>The assets must be define in the current Pecker configuration.</p>
+            <ul>
+              <li>Required: <code>true</code>
+              </li>
+              <li>Default: <code>null</code>
+              </li>
+              <li>Possible values: A valid URL.</li>
+            </ul>
+            <hr>
+            <h4 id="example-package-asset-configuration">Example <code>package</code> asset configuration</h4>
+            <p>Transform all <code>*.scss</code> SASS files from a folder and produce a single <code>site.css</code> file asset</p>
+            <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;my-project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;baseDir&quot;</span><span class="p">:</span> <span class="s2">&quot;/path/to/your/project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;baseUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;/assets&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;destDir&quot;</span><span class="p">:</span> <span class="s2">&quot;./dist&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;assets&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;url&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;jquery.min.js&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://code.jquery.com/jquery-1.11.1.min.js&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
             </div>
-            <p>Refer to API documentation to explore more in depth.</p>
+            <p>The above example will define a <code>url</code> asset <code>jquery.min.js</code> that points to <code>http://code.jquery.com/jquery-1.11.1.min.js</code>.</p>
           </div>
           <hr/> </div>
       </div>

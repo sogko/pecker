@@ -60,6 +60,8 @@
                   </li>
                   <li class=""><a href="/pecker/usages/installation/">Installation</a>
                   </li>
+                  <li class=""><a href="/pecker/usages/configuring-options/">Configuring options</a>
+                  </li>
                   <li class=""><a href="/pecker/usages/pecker-cli/">Pecker CLI</a>
                   </li>
                   <li class=""><a href="/pecker/usages/local-module/">Local Module</a>
@@ -67,6 +69,36 @@
                   <li class=""><a href="/pecker/usages/gulp-task/">Gulp Task</a>
                   </li>
                   <li class=""><a href="/pecker/usages/client-side/">Client-side</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Asset Types</p>
+                <ul>
+                  <li class=""><a href="/pecker/asset-types/overview/">Overview</a>
+                  </li>
+                  <li class=""><a href="/pecker/asset-types/file-asset/">File asset type</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Configurations</p>
+                <ul>
+                  <li class=""><a href="/pecker/configurations/general/">General configuration</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/asset-types/">Asset types</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/basic-asset/">Asset configuration</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/file-asset/"> &mdash; File asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/folder-asset/"> &mdash; Folder asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/browserify-asset/"> &mdash; Browserify asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/url-asset/"> &mdash; URL asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/package-asset/"> &mdash; Package asset</a>
                   </li>
                 </ul>
               </li>
@@ -90,7 +122,6 @@
                     
                 </h2> </div>
           <div class="content">
-            <p>This section outlines use-cases for why you would need a framework to manage your assets.</p>
             <hr>
             <h4 id="wrangle-a-variety-of-assets-with-complex-dependencies-easily">Wrangle a variety of assets with complex dependencies easily</h4>
             <p>A web project typically may start with something as simple as the following set of assets:</p>
@@ -122,7 +153,7 @@
               <li>Auto-prefix vendor-specific prefixes to CSS rules.</li>
               <li>Optimize your CSS stylesheet for improved performance through minification.</li>
               <li>Optimize your JavaScript files for improved performances through minification and name-mangling.</li>
-              <li>Bundling your Javascript files for use in browsers using Browserify</li>
+              <li>Bundling your Javascript files for use in browsers using Browserify.</li>
               <li>And much more!</li>
             </ul>
             <p>In short, there is no shortage of use-cases for processing your assets before serving them up in your web applications.</p>
@@ -167,6 +198,8 @@ your assets as well.</strong>
     </a> was engineered with highest degree of penetrative precision by <a href="https://twitter.com/sogko">@sogko</a> </div>
     </footer>
   </div>
+  <script src="/pecker/dist/pecker.js"></script>
+  <script src="/pecker/dist/pecker-loader.js"></script>
   <script src="/pecker/dist/common.js"></script>
   <script src="/pecker/dist/site.js"></script>
   <script>

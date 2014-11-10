@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="description" content="A modern assets management framework for your web application development">
+  <title>Pecker &mdash; File asset type</title>
+  <link rel="shortcut icon" href="/pecker/img/1411844936_196741.ico">
+  <link rel="stylesheet" href="/pecker/dist/site.css" /> </head>
+
+<body>
+  <div class="default-layout">
+    <div class="documentation-layout" data-block-name="layouts/documentation" data-block-type="runnable">
+      <div class="header">
+        <div class="documentation-header">
+          <div class="documentation-header__menu-button">
+            <div class="toc__menu-button">
+              <div class="collapsible-menu-button" data-block-name="blocks/buttons/collapsible-menu-button" data-block-type="component">
+                <button type="button">&#9776; PECKER</button>
+              </div>
+            </div>
+          </div>
+          <div class="documentation-header__content"> <a class="brand-simple" href="/pecker/">PECKER</a> &mdash; A modern assets management framework for your web application development </div>
+        </div>
+      </div>
+      <div class="content-row">
+        <div class="toc">
+          <nav class="toc__menu">
+            <ul class="toc__menu-items">
+              <li>
+                <p>Pecker</p>
+                <ul>
+                  <li class=""><a class="nav-list-group-item-link" href="/pecker/">Home </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Getting Started</p>
+                <ul>
+                  <li class=""><a href="/pecker/getting-started/overview/">Overview</a>
+                  </li>
+                  <li class=""><a href="/pecker/getting-started/concepts/">Concepts</a>
+                  </li>
+                  <li class=""><a href="/pecker/getting-started/how-is-pecker-different-from-other-build-tools/">How is Pecker different from other build tools?</a>
+                  </li>
+                  <li class=""><a href="/pecker/getting-started/why-would-i-need-a-framework/">Why would I need a framework?</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Usages</p>
+                <ul>
+                  <li class=""><a href="/pecker/usages/overview/">Overview</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/installation/">Installation</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/configuring-options/">Configuring options</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/pecker-cli/">Pecker CLI</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/local-module/">Local Module</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/gulp-task/">Gulp Task</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/client-side/">Client-side</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Asset Types</p>
+                <ul>
+                  <li class=""><a href="/pecker/asset-types/overview/">Overview</a>
+                  </li>
+                  <li class="active"><a href="/pecker/asset-types/file-asset/">File asset type</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Configurations</p>
+                <ul>
+                  <li class=""><a href="/pecker/configurations/general/">General configuration</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/asset-types/">Asset types</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/basic-asset/">Asset configuration</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/file-asset/"> &mdash; File asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/folder-asset/"> &mdash; Folder asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/browserify-asset/"> &mdash; Browserify asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/url-asset/"> &mdash; URL asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/package-asset/"> &mdash; Package asset</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Developers</p>
+                <ul>
+                  <li class=""><a href="/pecker/developers/contributing/">Contributing</a>
+                  </li>
+                  <li class=""><a href="/pecker/developers/changelog/">Changelog</a>
+                  </li>
+                  <li class=""><a href="/pecker/developers/license/">License</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="content-column">
+          <div class="content-header">
+            <h2>File asset type
+                    
+                </h2> </div>
+          <div class="content">
+            <hr>
+            <p>A <code>file</code> asset is the most basic asset type that you can have. Any physical file can be a <code>file</code> asset.</p>
+            <p>Typical examples of a <code>file</code> asset:</p>
+            <ul>
+              <li>a script file,</li>
+              <li>a stylesheet file,</li>
+              <li>an image file,</li>
+              <li>an audio file,</li>
+              <li>an icon file,</li>
+              <li>and the list goes on!</li>
+            </ul>
+            <p>Basically, any single file that you want to serve from your server, is a <code>file</code> asset.</p>
+            <p>For <code>file</code> asset configuration options, see <a href="/pecker/configurations/file-asset">Configurations</a>.</p>
+            <hr>
+            <h3 id="usages">Usages</h3>
+            <p>We will go through some examples of typical use-cases for using <code>file</code> assets:</p>
+            <ul>
+              <li>Simple <code>file</code> assets.</li>
+              <li>Concatenating multiple files into a single <code>file</code> asset.</li>
+              <li>Applying transformations on <code>file</code> assets.</li>
+            </ul>
+            <hr>
+            <h4 id="simple-file-assets">Simple file assets</h4>
+            <p>To demonstrate a simple (and trivial) use-case for file assets, we are going to work on a simple HTML project where we have multiple stylesheets and scripts.</p>
+            <p>Each stylesheet and script will be a separate <code>file</code> asset.</p>
+            <p>Let&#39;s say you have the following project structure for a simple HTML project.</p>
+            <div class="highlight"><pre><code class="language-bash" data-lang="bash">/path/to/your/project/
+<span class="p">|</span>-- pecker.json
+<span class="p">|</span>-- index.html
+<span class="p">|</span>-- src/
+<span class="p">|</span>   <span class="p">|</span>-- stylesheets/
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- site.css
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- components.css
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- more-styles.css
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- ...
+<span class="p">|</span>   <span class="p">|</span>-- scripts/
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- site.js
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- components.js
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- ...
+<span class="p">|</span>   <span class="p">|</span>-- ...
+<span class="p">|</span>-- dist/</code></pre>
+            </div>
+            <p>Next, create a <code>pecker.json</code> configuration, defining a <code>file</code> asset configuration for each stylesheet or script file.</p>
+            <div id="simple-file-assets-pecker-json"></div>
+            <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;my-project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;baseDir&quot;</span><span class="p">:</span> <span class="s2">&quot;/path/to/your/project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;baseUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;./&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;destDir&quot;</span><span class="p">:</span> <span class="s2">&quot;./dist&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;assets&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;file&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;site.css&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="s2">&quot;./src/stylesheets/site.css&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;file&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;components.css&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="s2">&quot;./src/stylesheets/components.css&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;file&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;more-styles.css&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="s2">&quot;./src/stylesheets/more-styles.css&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;file&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;site.js&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="s2">&quot;./src/scripts/site.js&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;file&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;components.js&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="s2">&quot;./src/scripts/components.js&quot;</span>
+    <span class="p">},</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+            </div>
+            <p>Run <code>pecker build</code> from <code>/path/to/your/project/</code> folder in your terminal.</p>
+            <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd</span> /path/to/your/project/
+<span class="nv">$ </span>pecker build</code></pre>
+            </div>
+            <p>This will generate the following files in your <code>dist</code> folder.</p>
+            <div class="highlight"><pre><code class="language-bash" data-lang="bash">/path/to/your/project/
+<span class="p">|</span>-- pecker.json
+<span class="p">|</span>-- index.html
+<span class="p">|</span>-- src/
+<span class="p">|</span>   <span class="p">|</span>-- stylesheets/
+<span class="p">|</span>   <span class="p">|</span>-- scripts/
+<span class="p">|</span>   <span class="p">|</span>-- ...
+<span class="p">|</span>-- dist/
+<span class="p">|</span>   <span class="p">|</span>-- site.css
+<span class="p">|</span>   <span class="p">|</span>-- components.css
+<span class="p">|</span>   <span class="p">|</span>-- more-styles.css
+<span class="p">|</span>   <span class="p">|</span>-- manifest.json
+<span class="p">|</span>   <span class="p">|</span>-- pecker.js
+<span class="p">|</span>   <span class="p">|</span>-- pecker-loader.js
+<span class="p">|</span>   <span class="p">|</span>-- site.js
+<span class="p">|</span>   <span class="p">|</span>-- components.js</code></pre>
+            </div>
+            <p>Basically, what we have told Pecker to do is simply create a copy of our assets defined in <code>pecker.json</code> into the folder defined in <code>destDir</code> property.</p>
+            <p>Now we have all of our assets in our &quot;compiled&quot; folder. (though we did not do any compiling in this example).</p>
+            <p>Let&#39;s include our stylesheet and script assets in our <code>index.html</code>.</p>
+            <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  ...
+  <span class="c">&lt;!-- multiple stylesheet assets --&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;dist/site.css&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;dist/components.css&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;dist/more-styles.css&quot;</span><span class="nt">/&gt;</span>
+  ...
+<span class="nt">&lt;/head&gt;</span>
+...
+<span class="nt">&lt;body&gt;</span>
+...
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;dist/site.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;dist/components.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre>
+            </div>
+            <p><strong>Notes:</strong>
+            </p>
+            <ul>
+              <li>This is a very trivial example where we simply copy selected assets into a destination folder. We have yet to begin taking advantage of the real power of Pecker.</li>
+              <li>For real-life web development, you would consider:
+                <ul>
+                  <li>Concatenating / minifying multiple stylesheets or scripts into a single file asset.</li>
+                  <li>Automatically include your <code>file</code> assets into HTML pages using templates.</li>
+                </ul>
+              </li>
+            </ul>
+            <hr>
+            <h4 id="concatenating-multiple-files-into-a-single-file-asset">Concatenating multiple files into a single <code>file</code> asset</h4>
+            <p>Continuing from the <a href="#simple-file-assets">previous example</a>, we can further improve how we manage our stylesheet and script assets.</p>
+            <p>Instead of having separate <code>file</code> assets for each stylesheet or script, we can concatenate the stylesheets into a single <code>file</code> and the scripts into another single <code>file</code>.</p>
+            <p>This strategy brings us a couple of benefits:</p>
+            <ul>
+              <li>By concatenating or combining our files into a single file, we reduce the number of HTTP requests needed to server our HTML pages.</li>
+              <li>We can &quot;bake-in&quot; the dependencies of the files by specifying the order of which the files are concatenated.</li>
+              <li>In later examples, you would see how we can bring this strategy to another level by doing some transformations.</li>
+            </ul>
+            <p>Again, let&#39;s say you have the following project structure:</p>
+            <div class="highlight"><pre><code class="language-bash" data-lang="bash">/path/to/your/project/
+<span class="p">|</span>-- pecker.json
+<span class="p">|</span>-- index.html
+<span class="p">|</span>-- src/
+<span class="p">|</span>   <span class="p">|</span>-- stylesheets/
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- site.css
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- components.css
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- more-styles.css
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- ...
+<span class="p">|</span>   <span class="p">|</span>-- scripts/
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- site.js
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- components.js
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- ...
+<span class="p">|</span>   <span class="p">|</span>-- ...
+<span class="p">|</span>-- dist/</code></pre>
+            </div>
+            <p>Now, let&#39;s change how we defined our <code>pecker.json</code> configuration by having only two (2) assets instead of the five (5) <a href="#simple-file-assets-pecker-json">previously</a>.</p>
+            <div id="concatenation-pecker-json"></div>
+            <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;my-project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;baseDir&quot;</span><span class="p">:</span> <span class="s2">&quot;/path/to/your/project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;baseUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;./&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;destDir&quot;</span><span class="p">:</span> <span class="s2">&quot;./dist&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;assets&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;file&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;stylesheets.css&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;./src/stylesheets/site.css&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;./src/stylesheets/components.css&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;./src/stylesheets/more-styles.css&quot;</span><span class="p">,</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;file&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;scripts.js&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;./src/scripts/site.js&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;./src/scripts/components.js&quot;</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+            </div>
+            <p>Even though we did not have to explicitly tell Pecker to perform concatenation, Pecker knows that if a <code>file</code> asset has multiple <code>files</code>, it would automatically concatenate it into a single file.</p>
+            <p>Now we are ready to run <code>pecker build</code> from <code>/path/to/your/project/</code> folder in your terminal.</p>
+            <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd</span> /path/to/your/project/
+<span class="nv">$ </span>pecker build</code></pre>
+            </div>
+            <p>This will generate the following files in your <code>dist</code> folder.</p>
+            <div class="highlight"><pre><code class="language-bash" data-lang="bash">/path/to/your/project/
+<span class="p">|</span>-- pecker.json
+<span class="p">|</span>-- index.html
+<span class="p">|</span>-- src/
+<span class="p">|</span>   <span class="p">|</span>-- stylesheets/
+<span class="p">|</span>   <span class="p">|</span>-- scripts/
+<span class="p">|</span>   <span class="p">|</span>-- ...
+<span class="p">|</span>-- dist/
+<span class="p">|</span>   <span class="p">|</span>-- stylesheets.css
+<span class="p">|</span>   <span class="p">|</span>-- scripts.js
+<span class="p">|</span>   <span class="p">|</span>-- manifest.json
+<span class="p">|</span>   <span class="p">|</span>-- pecker.js
+<span class="p">|</span>   <span class="p">|</span>-- pecker-loader.js</code></pre>
+            </div>
+            <p>Note that the output <code>file</code> assets has the same names as defined in the <code>pecker.json</code>, i.e.:</p>
+            <ul>
+              <li><code>dist/stylesheets.css</code> will contain all styles from the three (3) stylesheets.</li>
+              <li><code>dist/scripts.js</code> will contain all scripts from the two (3) scripts.</li>
+            </ul>
+            <p>Let&#39;s include our concatenated assets in our <code>index.html</code>.</p>
+            <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  ...
+  <span class="c">&lt;!-- multiple stylesheet assets --&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;dist/stylesheets.css&quot;</span><span class="nt">/&gt;</span>
+  ...
+<span class="nt">&lt;/head&gt;</span>
+...
+<span class="nt">&lt;body&gt;</span>
+...
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;dist/scripts.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre>
+            </div>
+            <p>In this example, we have just seen how a <code>file</code> asset can have multiple <code>files</code> as its source and it will be automatically concatenated into a single file. This one of the most common use-cases for managing your assets.</p>
+            <hr>
+            <h4 id="applying-transformations-on-file-assets">Applying transformations on file assets</h4>
+            <p>In the previous example, we have seen how a <code>file</code> asset can have multiple <code>files</code> as its source and it will be automatically concatenated into a single file.</p>
+            <p>Building upon that, we can take the previous example even further by applying some transformations to the <code>file</code> asset.</p>
+            <p>Some examples for transformations are:</p>
+            <ul>
+              <li>Pre-processing LESS or SASS stylesheets into CSS.</li>
+              <li>Automatically adding vendor-specific prefixes to your CSS styles.</li>
+              <li>Minify-ing your CSS stylesheets.</li>
+              <li>Compiling your Coffeescript files into JavaScript.</li>
+              <li>Minifying and obsfucating your JavaScript files.</li>
+              <li>And many more!</li>
+            </ul>
+            <p>In this example, we are going to take the previous example and minify our stylesheets and scripts.</p>
+            <p>Let&#39;s update our <a href="#concatenation-pecker-json">previous <code>pecker.json</code></a> configuration by adding minification transformations to each of our defined assets.</p>
+            <p>We will use built-in transformations for this example:</p>
+            <ul>
+              <li><code>clean-css</code> to minify CSS stylesheets.</li>
+              <li><code>uglify</code> to minify and obsfucate JavaScript.</li>
+            </ul>
+            <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;my-project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;baseDir&quot;</span><span class="p">:</span> <span class="s2">&quot;/path/to/your/project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;baseUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;./&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;destDir&quot;</span><span class="p">:</span> <span class="s2">&quot;./dist&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;assets&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;file&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;stylesheets.css&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;./src/stylesheets/site.css&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;./src/stylesheets/components.css&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;./src/stylesheets/more-styles.css&quot;</span><span class="p">,</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;transform&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;clean-css&quot;</span> <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;file&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;scripts.js&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;./src/scripts/site.js&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;./src/scripts/components.js&quot;</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;transform&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;uglify&quot;</span> <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+            </div>
+            <p>Two (2) lines are all that we need. Now, let&#39;s build our assets again.</p>
+            <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd</span> /path/to/your/project/
+<span class="nv">$ </span>pecker build</code></pre>
+            </div>
+            <p>Exactly the same as the previous example, the builder will create two (2) assets. The only difference is that the files are now minified.</p>
+          </div>
+          <hr/> </div>
+      </div>
+    </div>
+    <footer class="documentation-layout__sticky-footer">
+      <div class="simple-footer">
+        <a href="#">
+          <!--<img src="/pecker/dist/images/icons/1411844934_open-box.png" width="35" height="35" alt="">-->
+        </a>
+        <br/> <a href="https://github.com/sogko/pecker">
+        PECKER
+    </a> was engineered with highest degree of penetrative precision by <a href="https://twitter.com/sogko">@sogko</a> </div>
+    </footer>
+  </div>
+  <script src="/pecker/dist/pecker.js"></script>
+  <script src="/pecker/dist/pecker-loader.js"></script>
+  <script src="/pecker/dist/common.js"></script>
+  <script src="/pecker/dist/site.js"></script>
+  <script>
+    // bootstrap SiteEngine
+    require('site').bootstrap();
+  </script>
+</body>
+
+</html>

@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <meta name="description" content="A modern assets management framework for your web application development">
-  <title>Pecker &mdash; Local Module</title>
+  <title>Pecker &mdash; Overview</title>
   <link rel="shortcut icon" href="/pecker/img/1411844936_196741.ico">
   <link rel="stylesheet" href="/pecker/dist/site.css" /> </head>
 
@@ -64,7 +64,7 @@
                   </li>
                   <li class=""><a href="/pecker/usages/pecker-cli/">Pecker CLI</a>
                   </li>
-                  <li class="active"><a href="/pecker/usages/local-module/">Local Module</a>
+                  <li class=""><a href="/pecker/usages/local-module/">Local Module</a>
                   </li>
                   <li class=""><a href="/pecker/usages/gulp-task/">Gulp Task</a>
                   </li>
@@ -75,7 +75,7 @@
               <li>
                 <p>Asset Types</p>
                 <ul>
-                  <li class=""><a href="/pecker/asset-types/overview/">Overview</a>
+                  <li class="active"><a href="/pecker/asset-types/overview/">Overview</a>
                   </li>
                   <li class=""><a href="/pecker/asset-types/file-asset/">File asset type</a>
                   </li>
@@ -118,31 +118,26 @@
         </div>
         <div class="content-column">
           <div class="content-header">
-            <h2>Local Module
+            <h2>Overview
                     
                 </h2> </div>
           <div class="content">
             <hr>
-            <h4 id="using-pecker-as-a-local-nodejs-module">Using Pecker as a local NodeJS module</h4>
-            <p>This is useful if you want to <strong>create your own custom build workflow</strong>.</p>
-            <p>You can also <strong>integrate Pecker into your existing build</strong> <em>(in your <code>Gruntfile.js</code> or <code>gulpfile.js</code>, for example)</em>.</p>
-            <p>Here&#39;s an example on how to use <code>Pecker.Builder</code> directly</p>
-            <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">Pecker</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;pecker&#39;</span><span class="p">);</span>
-
-<span class="c1">// define Pecker.Builder options</span>
-<span class="kd">var</span> <span class="nx">opts</span> <span class="o">=</span> <span class="p">{</span> <span class="cm">/*...*/</span> <span class="p">};</span>
-<span class="c1">// or require a .js or json file containing configured options</span>
-<span class="c1">// for eg: var opts = require(&#39;./pecker.json&#39;);</span>
-
-<span class="c1">// create Pecker.Builder instance</span>
-<span class="kd">var</span> <span class="nx">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Pecker</span><span class="p">.</span><span class="nx">Builder</span><span class="p">(</span><span class="nx">opts</span><span class="p">);</span>
-
-<span class="c1">// build assets defined in `opts`</span>
-<span class="nx">builder</span><span class="p">.</span><span class="nx">buildAssets</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Build completed&#39;</span><span class="p">);</span>
-<span class="p">);</span></code></pre>
-            </div>
-            <p>Refer to API documentation to explore more in depth.</p>
+            <p>In the most general sense, Pecker recognizes any type of content as an asset.
+              <br/>As long as you can serve the file from your server, it is an asset for you and your web application.</p>
+            <p>Pecker has defined five (5) asset types to help you manage your assets easily:</p>
+            <ul>
+              <li><code>file</code>
+              </li>
+              <li><code>folder</code>
+              </li>
+              <li><code>browserify</code>
+              </li>
+              <li><code>url</code>
+              </li>
+              <li><code>package</code>
+              </li>
+            </ul>
           </div>
           <hr/> </div>
       </div>
