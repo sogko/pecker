@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="description" content="A modern assets management framework for your web application development">
+  <title>Pecker &mdash; Folder asset type</title>
+  <link rel="shortcut icon" href="/pecker/img/1411844936_196741.ico">
+  <link rel="stylesheet" href="/pecker/dist/site.css" /> </head>
+
+<body>
+  <div class="default-layout">
+    <div class="documentation-layout" data-block-name="layouts/documentation" data-block-type="runnable">
+      <div class="header">
+        <div class="documentation-header">
+          <div class="documentation-header__menu-button">
+            <div class="toc__menu-button">
+              <div class="collapsible-menu-button" data-block-name="blocks/buttons/collapsible-menu-button" data-block-type="component">
+                <button type="button">&#9776; PECKER</button>
+              </div>
+            </div>
+          </div>
+          <div class="documentation-header__content"> <a class="brand-simple" href="/pecker/">PECKER</a> &mdash; A modern assets management framework for your web application development </div>
+        </div>
+      </div>
+      <div class="content-row">
+        <div class="toc">
+          <nav class="toc__menu">
+            <ul class="toc__menu-items">
+              <li>
+                <p>Pecker</p>
+                <ul>
+                  <li class=""><a class="nav-list-group-item-link" href="/pecker/">Home </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Getting Started</p>
+                <ul>
+                  <li class=""><a href="/pecker/getting-started/overview/">Overview</a>
+                  </li>
+                  <li class=""><a href="/pecker/getting-started/concepts/">Concepts</a>
+                  </li>
+                  <li class=""><a href="/pecker/getting-started/how-is-pecker-different-from-other-build-tools/">How is Pecker different from other build tools?</a>
+                  </li>
+                  <li class=""><a href="/pecker/getting-started/why-would-i-need-a-framework/">Why would I need a framework?</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Usages</p>
+                <ul>
+                  <li class=""><a href="/pecker/usages/overview/">Overview</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/installation/">Installation</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/configuring-options/">Configuring options</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/pecker-cli/">Pecker CLI</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/local-module/">Local Module</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/gulp-task/">Gulp Task</a>
+                  </li>
+                  <li class=""><a href="/pecker/usages/client-side/">Client-side</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Asset Types</p>
+                <ul>
+                  <li class=""><a href="/pecker/asset-types/overview/">Overview</a>
+                  </li>
+                  <li class=""><a href="/pecker/asset-types/file-asset/">File asset type</a>
+                  </li>
+                  <li class="active"><a href="/pecker/asset-types/folder-asset/">Folder asset type</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Configurations</p>
+                <ul>
+                  <li class=""><a href="/pecker/configurations/general/">General configuration</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/asset-types/">Asset types</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/basic-asset/">Asset configuration</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/file-asset/"> &mdash; File asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/folder-asset/"> &mdash; Folder asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/browserify-asset/"> &mdash; Browserify asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/url-asset/"> &mdash; URL asset</a>
+                  </li>
+                  <li class=""><a href="/pecker/configurations/package-asset/"> &mdash; Package asset</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Developers</p>
+                <ul>
+                  <li class=""><a href="/pecker/developers/contributing/">Contributing</a>
+                  </li>
+                  <li class=""><a href="/pecker/developers/changelog/">Changelog</a>
+                  </li>
+                  <li class=""><a href="/pecker/developers/license/">License</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="content-column">
+          <div class="content-header">
+            <h2>Folder asset type
+                    
+                </h2> </div>
+          <div class="content">
+            <hr>
+            <p>A <code>folder</code> asset is another useful asset type.</p>
+            <p>Any physical folder can be a <code>folder</code> asset.</p>
+            <p>Specifying a folder as a <code>folder</code> asset allows you to easily reference its files and sub-folders as a <code>file</code> asset.</p>
+            <p>For <code>folder</code> asset configuration options, see <a href="/pecker/configurations/folder-asset">Configurations &gt; Folder asset</a>.</p>
+            <hr>
+            <h3 id="usages">Usages</h3>
+            <p>We will go through some examples of typical use-cases for using <code>folder</code> assets:</p>
+            <ul>
+              <li>Simple <code>folder</code> assets.</li>
+              <li>Including contents in a <code>folder</code> asset in a <code>package</code> asset.</li>
+            </ul>
+            <hr>
+            <h4 id="simple-folder-assets.">Simple <code>folder</code> assets.</h4>
+            <p>The <code>folder</code> asset is most useful:</p>
+            <ul>
+              <li>when you need to manage multiple file assets</li>
+              <li>when the file assets are of varied types (*.css, *.js, *.jpg, etc)</li>
+              <li>when you don&#39;t need any transformation done the files</li>
+              <li>when you only need to serve the assets as-it-is.</li>
+            </ul>
+            <p>You would be able to see how easy this makes organizing your <code>file</code> assets as-it-is.</p>
+            <p>Let&#39;s say you have the following project structure for a simple HTML project. And in this project you make use of a vendor code (for example, <a href="http://getbootstrap.com">Bootstrap 3</a>)</p>
+            <div class="highlight"><pre><code class="language-bash" data-lang="bash">/path/to/your/project/
+<span class="p">|</span>-- pecker.json
+<span class="p">|</span>-- index.html
+<span class="p">|</span>-- src/
+<span class="p">|</span>   <span class="p">|</span>-- bootstrap
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- css
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- bootstrap-theme.css
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- bootstrap-theme.css.map
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- bootstrap-theme.min.css
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- bootstrap.css
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- bootstrap.css.map
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- bootstrap.min.css
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- fonts
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- glyphicons-halflings-regular.eot
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- glyphicons-halflings-regular.svg
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- glyphicons-halflings-regular.ttf
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- glyphicons-halflings-regular.woff
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- js
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- bootstrap.js
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- bootstrap.min.js
+<span class="p">|</span>   <span class="p">|</span>-- stylesheets/
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- ...
+<span class="p">|</span>   <span class="p">|</span>-- scripts/
+<span class="p">|</span>   <span class="p">|</span>   <span class="p">|</span>-- ...
+<span class="p">|</span>   <span class="p">|</span>-- ...
+<span class="p">|</span>-- dist/</code></pre>
+            </div>
+            <p>Imagine if you need all of the files within <code>./src/bootstrap/**</code>, you would think that you would need to define a <code>file</code> asset configuration for <strong>each</strong> file.</p>
+            <p>That would work but you would end up with a pretty huge <code>pecker.json</code> configuration. And totally unnecessary.</p>
+            <p>Instead, with <code>folder</code> asset, you can have the following:</p>
+            <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;my-project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;baseDir&quot;</span><span class="p">:</span> <span class="s2">&quot;/path/to/your/project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;baseUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;./&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;destDir&quot;</span><span class="p">:</span> <span class="s2">&quot;./dist&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;assets&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;folder&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;bootstrap&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;folder&quot;</span><span class="p">:</span> <span class="s2">&quot;./src/bootstrap&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+            </div>
+            <p>This would tell <code>Pecker.Builder</code> to copy the whole <code>./src/bootstrap/</code> folder and its content into <code>./dist</code>.</p>
+            <p>You can even choose to include/exclude files to copy with the <a href="/pecker/configurations/folder-asset/#include">include</a> and <a href="/pecker/configurations/folder-asset/#exclude">exclude</a> options.</p>
+            <p>For example, if you want to exclude the CSS sourcemap files (*.map), you can have the following <code>pecker.json</code>.</p>
+            <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;my-project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;baseDir&quot;</span><span class="p">:</span> <span class="s2">&quot;/path/to/your/project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;baseUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;./&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;destDir&quot;</span><span class="p">:</span> <span class="s2">&quot;./dist&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;assets&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;folder&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;bootstrap&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;folder&quot;</span><span class="p">:</span> <span class="s2">&quot;./src/bootstrap&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;exclude&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;**/*.map&quot;</span><span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+            </div>
+            <hr>
+            <h4 id="including-contents-in-a-folder-asset-in-a-package-asset">Including contents in a <code>folder</code> asset in a <code>package</code> asset</h4>
+            <p>Another cool feature of <code>folder</code> asset is that it allows you to reference its files and sub-folders in a <code>package</code> asset.</p>
+            <p>This allows you to create <code>package</code> assets for different environment / needs; for example one package for development environment, and one package for production with the minified vendor sources only.</p>
+            <p>Continuing from the previous example and folder structure:</p>
+            <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;my-project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;baseDir&quot;</span><span class="p">:</span> <span class="s2">&quot;/path/to/your/project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;baseUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;./&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;destDir&quot;</span><span class="p">:</span> <span class="s2">&quot;./dist&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;assets&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;folder&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;bootstrap-dist&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;folder&quot;</span><span class="p">:</span> <span class="s2">&quot;./src/bootstrap&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;package&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;bootstrap-dev&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;assetNames&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;bootstrap-dist/js/bootstrap.js&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bootstrap-dist/css/bootstrap.css&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bootstrap-dist/css/bootstrap.css.map&quot;</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+     <span class="p">{</span>
+       <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;package&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;bootstrap-production&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;assetsNames&quot;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="s2">&quot;bootstrap-dist/js/bootstrap.min.js&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;bootstrap-dist/css/bootstrap.min.css&quot;</span>
+       <span class="p">]</span>
+     <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+            </div>
+            <p>When you run <code>pecker build</code>, it still will copy <code>bootstrap</code> vendor files into <code>dist</code>.</p>
+            <p>Now you can use <code>Pecker.Assets</code> to load the right assets using <code>packages</code>.</p>
+          </div>
+          <hr/> </div>
+      </div>
+    </div>
+    <footer class="documentation-layout__sticky-footer">
+      <div class="simple-footer">
+        <a href="#">
+          <!--<img src="/pecker/dist/images/icons/1411844934_open-box.png" width="35" height="35" alt="">-->
+        </a>
+        <br/> <a href="https://github.com/sogko/pecker">
+        PECKER
+    </a> was engineered with highest degree of penetrative precision by <a href="https://twitter.com/sogko">@sogko</a> </div>
+    </footer>
+  </div>
+  <script src="/pecker/dist/pecker.js"></script>
+  <script src="/pecker/dist/pecker-loader.js"></script>
+  <script src="/pecker/dist/common.js"></script>
+  <script src="/pecker/dist/site.js"></script>
+  <script>
+    // bootstrap SiteEngine
+    require('site').bootstrap();
+  </script>
+</body>
+
+</html>
