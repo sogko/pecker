@@ -182,25 +182,6 @@ npm install
 npm test
 ```
 
-## Contributing to Pecker development
-### Issues, enhancement and pull requests are welcome!
-We welcome contributions of any kind to the project =) (Just be kind)
-
-### Workflow
-* We strongly encourage TDD/BDD workflows and would be happy if PRs (pull requests) come with accompanying tests.
-* This project uses Gulp for its build workflow.
-* To start developing,
-	* Fork and close project.
-	* ```npm install```
-	* ```bower install```
-	* ```npm test```
-	* Work on something
-	* ???
-	* Profit!	
-* Ensure that the project pass the following before submitting a PR:
-	* JSHint: ```gulp jshint```
-	* Tests: ```npm test```
-
 ----
 ## Known Issues
 ### `node-sass` transform fails if file contains `@import` directives
