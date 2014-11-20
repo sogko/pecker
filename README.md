@@ -214,17 +214,6 @@ var options = module.exports = {
 }
 ```
 
-### `folder` asset sometimes generate a new hash even though no files has been changed in the folder
-The content hash for a `folder` asset is calculated by hashing the content of all of the folder and its sub-folders files.
-The order of the files being hashed matters. For example, hash for files (A, B, C) is different for files (B, A, C), even though the content may be the same.
-
-The current mechanism behind traversing the folder and retrieving its files unfortunately can't guarantee the order of the files 100% of the time.
-
-This issue causes Pecker to re-create a duplicate physical asset.
-
-Nonetheless, not to worry since Pecker knows which latest `folder` asset to reference.
-
-You can do `pecker prune` to clear out duplicate and old physical assets.
 
 ----
 
