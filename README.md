@@ -266,7 +266,7 @@ You can do `pecker prune` to clear out duplicate and old physical assets.
 * Pecker.Assets
     * How to expose asset data to SASS files? (These are non-JavaScript)
     	* For other .scss files, @import as usual, use `includePaths` to let `sass` find it .
-    	* For urls (fonts/images), currently ew can hardcode it. but find a solution to get the right url?
+    	* For urls (fonts/images), currently we can hardcode it. but find a solution to get the right url?
     * Client-side: Make Pecker available in `window`, and maybe through angular
     * In-line assets
 	* Create an inline content for existing asset.
